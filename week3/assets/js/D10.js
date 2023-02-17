@@ -572,12 +572,14 @@ function addClassToRows() {
 function halfTree(height) {
   for (let i = 1; i <= height; i++) {
     let row = '';
-    for (let j = 1; j <= i; j++) {
+    for (let x = 1; x <= i; x++) {
       row += '*';
     }
     console.log(row);
   }
 }
+
+halfTree(4);
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -594,5 +596,14 @@ function halfTree(height) {
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
-
-/* Questo array viene usato per gli esercizi. Non modificarlo. */
+function isItPrime(num) {
+  if (num <= 1) { // Primo if di controllo
+    return false; 
+  }
+  for (let i = 2; i < num; i++) { 
+    if (num % i === 0) { // Divide il numero per tutti i numeri inferiori a quel numero
+      return false;
+    }
+  }
+  return true;
+}
