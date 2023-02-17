@@ -192,7 +192,7 @@ function howManyDays(para) {
   var data1 = new Date(para);
   var data2 = new Date();
   var time_diff = data2.getTime() - data1.getTime(); //Sottraggo i due valori, restituiti in millis
-  var giorni_diff = Math.floor(time_diff / (1000 * 60 * 60 * 24)); // Converte millisecondi-secondi-minuti-ore
+  var giorni_diff = Math.floor(time_diff / (1000 * 60 * 60 * 24)); // Converte millisecondi>secondi>minuti>ore>giorni
   return giorni_diff;
 }
 console.log(howManyDays("04/16/1992"));
@@ -205,10 +205,10 @@ function isTodayMyBirthday(para) {
   const birthday = new Date(para); // Data inserita
   const oggi = new Date(); // Data di oggi
 
-  const birthdayDay = birthday.getDate(); 
+  const birthdayDay = birthday.getDate();
   const birthdayMonth = birthday.getMonth() + 1; // Il calcolo di js per i mesi è 0-11, quello umano 1-12;
 
-  const oggiDay = oggi.getDate(); 
+  const oggiDay = oggi.getDate();
   const oggiMonth = oggi.getMonth() + 1; // Il calcolo di js per i mesi è 0-11, quello umano 1-12;
 
   if (birthdayDay == oggiDay && birthdayMonth == oggiMonth) {
@@ -355,7 +355,7 @@ console.log(deleteProp(unArray, "cognome"));
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
 
-//////////////////  Crasha l'intera pagina e non ho idea del perchè
+//////////////////  Crasha l'intera pagina
 /*
 function newestMovie() {
   let ultimoFilm = null;
@@ -427,7 +427,7 @@ function summAllTheYears() {
   let sum = 0;
   for (i = 0; i < movies.length; i++) {
     const movie = movies[i];
-    sum += parseInt(movie.Year,); // parseInt in quanto altrimenti concatena i valori come stringhe (sono stringhe nell'array)
+    sum += parseInt(movie.Year); // parseInt in quanto altrimenti concatena i valori come stringhe (sono stringhe nell'array)
   }
   return sum;
 }
@@ -453,8 +453,7 @@ function searchByTitle(title) {
 
   return results;
 }
-console.log(searchByTitle('rings'));
-
+console.log(searchByTitle("rings"));
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
@@ -471,17 +470,16 @@ function searchAndDivide(keyword) {
     const titolo = movie.Title.toLowerCase();
     const keylow = keyword.toLowerCase();
 
-
     if (titolo.includes(keylow)) {
       match.push(movie);
     } else {
       unmatch.push(movie);
     }
-}
-return {match, unmatch};
+  }
+  return { match, unmatch };
 }
 
-const risultato = searchAndDivide('rings');
+const risultato = searchAndDivide("rings");
 console.log(risultato.match);
 console.log(risultato.unmatch);
 
@@ -493,19 +491,21 @@ function removeIndex(rimuovi) {
   if (rimuovi >= 0 && rimuovi < nuovoMovies.length) {
     nuovoMovies.splice(rimuovi, 1);
   }
-  return nuovoMovies
+  return nuovoMovies;
 }
-console.log(removeIndex(2))
+console.log(removeIndex(2));
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
+const idContainer = document.getElementById("container");
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
+const tdSelector = document.querySelectorAll('td');
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
@@ -514,18 +514,46 @@ console.log(removeIndex(2))
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+function linkRossi() {
+  const link = document.getElementsByTagName('a');
+  for (let i = 0; i < link.length; i++) {
+    link[i].style.backgroundColor = 'red';
+  }
+}
+
+linkRossi();
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+const addToList = function (content) {
+  const myList = document.getElementById("myList"); 
+
+  const newItem = document.createElement("li");
+  const newItemText = document.createTextNode(content);
+  newItem.appendChild(newItemText);
+}
+
+addToList('Nuovo!');
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+function clearList() {
+  const myList = document.getElementById("myList");
+  myList.innerHTML = "";
+}
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+function addClassToRows() {
+  const trows = document.getElementsByTagName('tr');
+  for (let i = 0; i < trows.length; i++) {
+    const trow = trows[i];
+    trow.classList.add('test');
+  }
+}
 
 // [EXTRA] JS Avanzato
 
@@ -540,6 +568,16 @@ console.log(removeIndex(2))
   ***
 
 */
+
+function halfTree(height) {
+  for (let i = 1; i <= height; i++) {
+    let row = '';
+    for (let j = 1; j <= i; j++) {
+      row += '*';
+    }
+    console.log(row);
+  }
+}
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
