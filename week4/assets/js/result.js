@@ -58,9 +58,9 @@ const myChart = new Chart(Grafico, {
 
 var giudizio = function() {
   if (correctA > 5 ) {
-    return "<span id='congrats'>Congrats!</span> <br> You passed the exam!"
+    return "Congratulations!<br><span id='congrats'>You passed the exam!</span> <br> <span class='little'>We'll send you the certificate in few minutes. <br> Check your email (including promotions / spam folder)<span>"
   } else {
-    return "<span id='ohNo'>Sorry!</span><br> It will be better next time!"
+    return "Oh no!<br><span id='ohNo'>You have not passed the exam.</span> <br> <span class='little'>It will be better next time!</span>"
   }
 }
 
