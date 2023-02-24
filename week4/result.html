@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <a href="welcome.html"> <img src="assets/img/epicode_logo.png" alt="logo epicode" class="logo"></a>
+    </header>
+    
+    <main>
+        <div class="container" id="containerResult">
+
+            <div class="titolo">
+                <h1>Results</h1>
+                <h4>The summary of your answers:</h4>
+            </div>
+
+            <div id="risultato">
+
+                <div id="corrette">
+                    <h2>Correct</h2>
+                    <p class="perc"><span id="percentualeGiuste"></span>%</p>
+                    <p class="nDom"><span id="domandeCorrette"></span>questions</p>
+                </div>
+
+                <div id="centro">
+                    <div>
+                        <canvas id="grafico"></canvas>
+                    </div>
+
+                    <div id="centriamolo">
+                        <p id="esito"></p>
+                    </div>
+                </div>
+
+                <div id="sbagliate">
+                    <h2>Wrong</h2>
+                    <p class="perc"><span id="percentualeSbagliate"></span>%</p>
+                    <p class="nDom"><span id="domandeSbagliate"></span>questions</p>
+                </div>
+
+            </div>
+
+
+            <div>
+                <a class="but" id="btnFeedback" href="feedback.html">RATE US</a>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/result.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Page</title>
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+        <a href="welcome.html"> <img src="assets/img/epicode_logo.png" alt="logo epicode" class="logo"></a>
+    </header>
+    
+    <main>
+      <div class="container" id="containerFeedback">
+        <h2>Tell us how it's going</h2>
+
+        <div class="rating">
+          <p class="para">
+            From to 0 to 10, how likely are you to recommend EPICODE to a friend
+            or a colleague?
+          </p>
+
+          <div class="stars">
+            <img src="/assets/img/star.svg" alt="star" data-value="0" />
+            <img src="/assets/img/star.svg" alt="star" data-value="1" />
+            <img src="/assets/img/star.svg" alt="star" data-value="2" />
+            <img src="/assets/img/star.svg" alt="star" data-value="3" />
+            <img src="/assets/img/star.svg" alt="star" data-value="4" />
+            <img src="/assets/img/star.svg" alt="star" data-value="5" />
+            <img src="/assets/img/star.svg" alt="star" data-value="6" />
+            <img src="/assets/img/star.svg" alt="star" data-value="7" />
+            <img src="/assets/img/star.svg" alt="star" data-value="8" />
+            <img src="/assets/img/star.svg" alt="star" data-value="9" />
+          </div>
+        </div>
+
+        <div class="lasciaFeedback">
+          <p class="para">
+            Leave us an open feedback about your experience so far
+          </p>
+          <form action="https://join.epicode.com/corsi/front-end-developer-01-23-b-%f0%9f%87%ae%f0%9f%87%b9/modulo/javascript-ii-25/lezione/s3-l5-progetto-settimanale-8/" target="_blank">
+            <input
+              type="text"
+              class="commento"
+              placeholder="Write your comment here"
+              required/>
+
+            <button type="submit" id="infoBtn" class="but">MORE INFO</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="/assets/js/feedback.js"></script>
+  </body>
+</html>
