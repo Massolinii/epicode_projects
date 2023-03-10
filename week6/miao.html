@@ -1,297 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-xxxxx"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/assets/css/miao.css" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!--NAV BAR-->
-    <nav class="navbar navbar-light bg-dark justify-content-between px-4">
-        <div class="d-flex align-items-center p-0">
-            <img src="/assets/imgs/netflix_logo.png" alt="Logo netflix" id="logo" />
-            <ul class="navbar-nav ms-3 me-auto flex flex-row">
-                <li class="nav-item p">
-                    <a class="nav-link text-white px-3" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white px-3 active" href="#">TV Shows</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white px-3" href="#">Movies</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white px-3" href="#">Recently Added</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white px-3" href="#">My List</a>
-                </li>
-            </ul>
-        </div>
+    <nav
+      class="navbar navbar-light bg-dark justify-content-between px-4"
+      id="navbar"
+    >
+      <div class="d-flex align-items-center p-0">
+        <img src="/assets/imgs/netflix_logo.png" alt="Logo netflix" id="logo" />
+        <ul class="navbar-nav ms-3 me-auto flex flex-row">
+          <li class="nav-item p">
+            <a class="nav-link text-white px-3" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3 active" href="#">TV Shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="#">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="#">Recently Added</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="#">My List</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="d-flex align-items-center justify-content-center text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search mx-4"
-                viewBox="0 0 16 16">
-                <path
-                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
-            <p class="mx-2 my-0">KIDS</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-bell-fill mx-4" viewBox="0 0 16 16">
-                <path
-                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
-            </svg>
-            <div class="ml-3 kids">
-                <img src="/assets/imgs/avatar.png" alt="profile picture" id="proPic" />
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-caret-down-fill mx-1" viewBox="0 0 16 16">
-                <path
-                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-            </svg>
+      <div class="d-flex align-items-center justify-content-center text-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-search mx-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+          />
+        </svg>
+        <p class="mx-2 my-0">KIDS</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-bell-fill mx-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"
+          />
+        </svg>
+        <div class="ml-3 kids">
+          <img
+            src="/assets/imgs/avatar.png"
+            alt="profile picture"
+            id="proPic"
+          />
         </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-caret-down-fill mx-1"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+          />
+        </svg>
+      </div>
     </nav>
 
     <main>
         <div class="container">
-            <div class="row">
-                <div class="col-2 h2 text-white pt-4 mb-0">TV Shows</div>
-
-                <!-- FILTER-->
-                <div
-                    class="col-2 h2 font-weight-bold text-white pt-4 mb-0 dropdown d-flex align-items-center justify-content-center">
-                    <select name="filter" class="filter form-control form-control-sm bg-dark text-white">
-                        <option value="" disabled selected>Select a filter</option>
-                        <option value="genres">Genres</option>
-                        <option value="year">Year</option>
-                        <option value="awards">Awards</option>
-                        <option value="alpha">A-Z</option>
-                    </select>
+            <div class="row align-items-center">
+              <!-- TITLE -->
+              <div class="col-3 h2 text-white pt-4 mb-0">TV Shows</div>
+          
+              <!-- FILTER -->
+              <div class="col-2 h2 font-weight-bold text-white pt-4 mb-0 dropdown">
+                <select name="filter" class="filter form-control form-control-sm bg-black text-white">
+                  <option value="genres">Genres</option>
+                  <option value="year">Year</option>
+                  <option value="awards">Awards</option>
+                  <option value="alpha">A-Z</option>
+                </select>
+              </div>
+          
+              <!-- SPACER -->
+              <div class="col-4"></div>
+          
+              <!-- BUTTONS -->
+              <div class="col-3 d-flex justify-content-end">
+                <div class="d-flex w-50">
+                  <button class="btn background-dark text-secondary border-secondary rounded-0 p-1 mr-2 flex-grow-1">
+                    <ion-icon name="reorder-three-outline"></ion-icon>
+                  </button>
+                  <button class="btn background-dark text-secondary border-secondary rounded-0 p-1 flex-grow-1">
+                    <ion-icon name="apps-outline"></ion-icon>
+                  </button>
                 </div>
+              </div>
             </div>
+          </div>
 
-            <div class="row">
-                <div class="col-12 h4 font-weight-bold text-white pt-4 mb-0">
-                    Trending now
+      <div class="container">
+        <div class="row">
+          <!--FIRST ROW-->
+          <div class="col-12 h4 font-weight-bold text-white pt-4 mb-0">
+            Trending now
+          </div>
+          <div class="col-12">
+            <div class="wrapper">
+              <section id="section1">
+                <a href="#section3" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media0.webp" alt="media0" />
+                  </a>
                 </div>
-                <div class="col-12">
-                    <div class="wrapper">
-                        <section id="section1">
-                            <a href="#section3" class="arrow__btn left-arrow">‹</a>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media0.webp" alt="media0" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media1.jpg" alt="media1" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media2.webp" alt="media2" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media3.webp" alt="media3" />
-                                </a>
-                            </div>
-                            <a href="#section2" class="arrow__btn right-arrow">›</a>
-                        </section>
-
-                        <section id="section2">
-                            <a href="#section1" class="arrow__btn left-arrow">‹</a>
-                            <div class="item">
-                                <img src="/assets/media/media4.jpg" alt="media4" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media5.webp" alt="media5" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media6.jpg" alt="media6" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media7.webp" alt="media7" />
-                            </div>
-                            <a href="#section3" class="arrow__btn right-arrow">›</a>
-                        </section>
-
-                        <section id="section3">
-                            <a href="#section2" class="arrow__btn left-arrow">‹</a>
-                            <div class="item">
-                                <img src="/assets/media/media8.webp" alt="media8" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media9.jpg" alt="media9" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media10.jpg" alt="media10" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media11.jpg" alt="media11" />
-                            </div>
-                            <a href="#section1" class="arrow__btn right-arrow">›</a>
-                        </section>
-                    </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media1.jpg" alt="media1" />
+                  </a>
                 </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media2.webp" alt="media2" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media3.webp" alt="media3" />
+                  </a>
+                </div>
+                <a href="#section2" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section2">
+                <a href="#section1" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media4.jpg" alt="media4" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media5.webp" alt="media5" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media6.jpg" alt="media6" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media7.webp" alt="media7" />
+                  </a>
+                </div>
+                <a href="#section3" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section3">
+                <a href="#section2" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media8.webp" alt="media8" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media9.jpg" alt="media9" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media10.jpg" alt="media10" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media11.jpg" alt="media11" />
+                  </a>
+                </div>
+                <a href="#section1" class="arrow__btn right-arrow">›</a>
+              </section>
             </div>
-
-            <div class="row">
-                <div class="col-12 h4 font-weight-bold text-white pt-4 mb-0">
-                    Watch It Again
-                </div>
-                <div class="col-12">
-                    <div class="wrapper">
-                        <section id="section4">
-                            <a href="#section6" class="arrow__btn left-arrow">‹</a>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media12.jpg" alt="media12" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media13.jpg" alt="media13" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media14.webp" alt="media14" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media15.jpg" alt="media15" />
-                                </a>
-                            </div>
-                            <a href="#section5" class="arrow__btn right-arrow">›</a>
-                        </section>
-
-                        <section id="section5">
-                            <a href="#section4" class="arrow__btn left-arrow">‹</a>
-                            <div class="item">
-                                <img src="/assets/media/media16.webp" alt="media16" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media17.jpg" alt="media17" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media18.jpg" alt="media18" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media19.webp" alt="media19" />
-                            </div>
-                            <a href="#section6" class="arrow__btn right-arrow">›</a>
-                        </section>
-
-                        <section id="section6">
-                            <a href="#section5" class="arrow__btn left-arrow">‹</a>
-                            <div class="item">
-                                <img src="/assets/media/media20.jpg" alt="media20" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media21.webp" alt="media21" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media22.webp" alt="media22" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media23.webp" alt="media23" />
-                            </div>
-                            <a href="#section4" class="arrow__btn right-arrow">›</a>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 h4 font-weight-bold text-white pt-4 mb-0">
-                    New Releases
-                </div>
-                <div class="col-12">
-                    <div class="wrapper">
-                        <section id="section7">
-                            <a href="#section9" class="arrow__btn left-arrow">‹</a>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media24.jpg" alt="media24" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media25.webp" alt="media25" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media26.webp" alt="media26" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="/assets/media/media27.jpg" alt="media27" />
-                                </a>
-                            </div>
-                            <a href="#section8" class="arrow__btn right-arrow">›</a>
-                        </section>
-
-                        <section id="section8">
-                            <a href="#section7" class="arrow__btn left-arrow">‹</a>
-                            <div class="item">
-                                <img src="/assets/media/media28.jpg" alt="media28" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media29.jpg" alt="media29" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media30.jpg" alt="media30" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media31.webp" alt="media31" />
-                            </div>
-                            <a href="#section9" class="arrow__btn right-arrow">›</a>
-                        </section>
-
-                        <section id="section9">
-                            <a href="#section8" class="arrow__btn left-arrow">‹</a>
-                            <div class="item">
-                                <img src="/assets/media/media32.jpg" alt="media32" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media10.jpg" alt="media10" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media20.jpg" alt="media20" />
-                            </div>
-                            <div class="item">
-                                <img src="/assets/media/media30.jpg" alt="media30" />
-                            </div>
-                            <a href="#section7" class="arrow__btn right-arrow">›</a>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-</body>
 
+        <!--SECOND ROW-->
+        <div class="row">
+          <div class="col-12 h4 font-weight-bold text-white pt-4 mb-0">
+            Watch It Again
+          </div>
+          <div class="col-12">
+            <div class="wrapper">
+              <section id="section4">
+                <a href="#section6" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media12.jpg" alt="media12" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media13.jpg" alt="media13" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media14.webp" alt="media14" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media15.jpg" alt="media15" />
+                  </a>
+                </div>
+                <a href="#section5" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section5">
+                <a href="#section4" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media16.webp" alt="media16" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media17.jpg" alt="media17" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media18.jpg" alt="media18" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media19.webp" alt="media19" />
+                  </a>
+                </div>
+                <a href="#section6" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section6">
+                <a href="#section5" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media20.jpg" alt="media20" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media21.webp" alt="media21" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media22.webp" alt="media22" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media23.webp" alt="media23" />
+                  </a>
+                </div>
+                <a href="#section4" class="arrow__btn right-arrow">›</a>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!--THIRD ROW-->
+        <div class="row">
+          <div class="col-12 h4 font-weight-bold text-white pt-4 mb-0">
+            New Releases
+          </div>
+          <div class="col-12">
+            <div class="wrapper">
+              <section id="section7">
+                <a href="#section9" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media24.jpg" alt="media24" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media25.webp" alt="media25" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media26.webp" alt="media26" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media27.jpg" alt="media27" />
+                  </a>
+                </div>
+                <a href="#section8" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section8">
+                <a href="#section7" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media28.jpg" alt="media28" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media29.jpg" alt="media29" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media30.jpg" alt="media30" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media31.webp" alt="media31" />
+                  </a>
+                </div>
+                <a href="#section9" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section9">
+                <a href="#section8" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media32.jpg" alt="media32" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media10.jpg" alt="media10" />
+                  </a>
+                  <!--Ho finito i media :\-->
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media20.jpg" alt="media20" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media30.jpg" alt="media30" />
+                  </a>
+                </div>
+                <a href="#section7" class="arrow__btn right-arrow">›</a>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center bg-black text-secondary">
+      <div class="container">
+        <div class="row">
+          <!--Social media-->
+          <div class="col">
+            <section class="d-flex pt-4">
+              <div class="d-flex align-items-center justify-content-center">
+                <a href="#" class="me-4 link-secondary fs-2">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="#" class="me-4 link-secondary fs-2">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="#" class="me-4 link-secondary fs-2">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+                <a href="#" class="me-4 link-secondary fs-2">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Links  -->
+      <section class="text-start">
+        <div class="container mt-2">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-3 mx-auto mb-4">
+              <!-- Links -->
+              <p>
+                <a href="#!" class="text-reset">Audio and Subtitles</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Media Center</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Privacy</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Contact us</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-3 mx-auto mb-4">
+              <!-- Links -->
+              <p>
+                <a href="#!" class="text-reset">Audio Description</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Investor Relations</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Legal Notices</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-3 mx-auto mb-4">
+              <!-- Links -->
+              <p>
+                <a href="#!" class="text-reset">Help Center</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Jobs</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Cookie Preferences</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-3 mx-auto mb-4">
+              <!-- Links -->
+              <p>
+                <a href="#!" class="text-reset">Gift Cards</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Terms of Use</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Corporate Informations</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div
+          class="text-center p-4"
+          style="background-color: rgba(0, 0, 0, 0.025)"
+        >
+          © 2021 Copyright:
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+            >MDBootstrap.com</a
+          >
+        </div>
+      </section>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

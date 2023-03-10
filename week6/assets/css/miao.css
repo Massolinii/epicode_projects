@@ -51,6 +51,7 @@ body {
 
 a {
     color: #fd0d0d !important; /* Evita che la freccia diventi blu */
+    text-decoration: none;
 }
 
 .arrow__btn {
