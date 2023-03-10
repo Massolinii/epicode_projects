@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflics</title>
+    <title>Document</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,211 +17,503 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-xxxxx"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
+
   <body>
     <!--NAV BAR-->
-    <nav class="navbar navbar-light bg-dark justify-content-between px-4">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-dark justify-content-between px-4"
+      id="navbar"
+    >
       <div class="d-flex align-items-center p-0">
         <img src="/assets/imgs/netflix_logo.png" alt="Logo netflix" id="logo" />
-        <ul class="navbar-nav ms-3 me-auto flex flex-row">
-          <li class="nav-item p">
-            <a class="nav-link text-white px-2" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white px-2 active" href="#">TV Shows</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">Movies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">Recently Added</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white px-2" href="#">My List</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="d-flex align-items-center justify-content-center text-white">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-search mx-4"
-          viewBox="0 0 16 16"
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
         >
-          <path
-            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-          />
-        </svg>
-        <p class="mx-2 my-0">KIDS</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-bell-fill mx-4"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"
-          />
-        </svg>
-        <div class="ml-3 kids">
-          <img
-            src="/assets/imgs/avatar.png"
-            alt="profile picture"
-            id="proPic"
-          />
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ms-3 me-auto flex flex-row">
+            <li class="nav-item p">
+              <a class="nav-link text-white px-3" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white px-3 active" href="#">TV Shows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white px-3" href="#">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white px-3" href="#">Recently Added</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white px-3" href="#">My List</a>
+            </li>
+          </ul>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-caret-down-fill mx-1"
-          viewBox="0 0 16 16"
+      </div>
+      <div class="d-flex align-items-center justify-content-center text-white">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
         >
-          <path
-            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-          />
-        </svg>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-search mx-4"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+            />
+          </svg>
+          <p class="mx-2 my-0">KIDS</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-bell-fill mx-4"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"
+            />
+          </svg>
+          <div class="ml-3 kids">
+            <img
+              src="/assets/imgs/avatar.png"
+              alt="profile picture"
+              id="proPic"
+            />
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-caret-down-fill mx-1"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+            />
+          </svg>
+        </div>
       </div>
     </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div
-            id="title-carousel"
-            class="carousel slide"
-            data-bs-ride="false"
-            data-bs-interval="false"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media0.webp"
-                      alt="Movie 1"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media1.jpg"
-                      alt="Movie 2"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media2.webp"
-                      alt="Movie 3"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media3.webp"
-                      alt="Movie 4"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media4.jpg"
-                      alt="Movie 5"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media5.webp"
-                      alt="Movie 6"
-                      class="img-fluid"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media6.jpg"
-                      alt="Movie 7"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media7.webp"
-                      alt="Movie 8"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media8.webp"
-                      alt="Movie 9"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media9.jpg"
-                      alt="Movie 10"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media10.jpg"
-                      alt="Movie 11"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <div class="col-2">
-                    <img
-                      src="/assets/media/media11.jpg"
-                      alt="Movie 12"
-                      class="img-fluid"
-                    />
-                  </div>
-                </div>
-              </div>
+    <main>
+      <div class="container mx-1-auto">
+        <div class="row align-items-center">
+          <!-- TITLE -->
+          <div class="col-3 h2 text-white pt-4 mb-0">TV Shows</div>
+
+          <!-- FILTER -->
+          <div class="col-2 h2 font-weight-bold text-white pt-4 mb-0 dropdown">
+            <select
+              name="filter"
+              class="filter form-control form-control-sm bg-black text-white"
+            >
+              <option value="genres">Genres</option>
+              <option value="year">Year</option>
+              <option value="awards">Awards</option>
+              <option value="alpha">A-Z</option>
+            </select>
+          </div>
+
+          <!-- SPACER -->
+          <div class="col-4"></div>
+
+          <!-- BUTTONS -->
+          <div class="col-3 d-flex justify-content-end">
+            <div class="d-flex w-50">
+              <button
+                class="btn background-dark text-secondary border-secondary rounded-0 mr-2 flex-grow-1"
+              >
+                <ion-icon name="reorder-three-outline" class="display"></ion-icon>
+              </button>
+              <button
+                class="btn background-dark text-secondary border-secondary rounded-0 flex-grow-1"
+              >
+                <ion-icon name="apps-outline" class="display"></ion-icon>
+              </button>
             </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#title-carousel"
-              data-bs-slide="prev"
-              data-bs-slide-to="0"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#title-carousel"
-              data-bs-slide="next"
-              data-bs-slide-to="1"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-            </button>
           </div>
         </div>
       </div>
-    </div>
+
+      <div class="container mx-1-auto">
+        <div class="row">
+          <!--FIRST ROW-->
+          <div class="col-12 h4 font-weight-bold text-white pt-4 mb-0">
+            Trending now
+          </div>
+          <div class="col-12">
+            <div class="wrapper">
+              <section id="section1">
+                <a href="#section3" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media0.webp" alt="media0" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media1.jpg" alt="media1" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media2.webp" alt="media2" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media3.webp" alt="media3" />
+                  </a>
+                </div>
+                <a href="#section2" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section2">
+                <a href="#section1" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media4.jpg" alt="media4" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media5.webp" alt="media5" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media6.jpg" alt="media6" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media7.webp" alt="media7" />
+                  </a>
+                </div>
+                <a href="#section3" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section3">
+                <a href="#section2" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media8.webp" alt="media8" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media9.jpg" alt="media9" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media10.jpg" alt="media10" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media11.jpg" alt="media11" />
+                  </a>
+                </div>
+                <a href="#section1" class="arrow__btn right-arrow">›</a>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!--SECOND ROW-->
+        <div class="row">
+          <div class="col-12 h4 font-weight-bold text-white pt-4 mb-0">
+            Watch It Again
+          </div>
+          <div class="col-12">
+            <div class="wrapper">
+              <section id="section4">
+                <a href="#section6" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media12.jpg" alt="media12" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media13.jpg" alt="media13" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media14.webp" alt="media14" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media15.jpg" alt="media15" />
+                  </a>
+                </div>
+                <a href="#section5" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section5">
+                <a href="#section4" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media16.webp" alt="media16" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media17.jpg" alt="media17" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media18.jpg" alt="media18" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media19.webp" alt="media19" />
+                  </a>
+                </div>
+                <a href="#section6" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section6">
+                <a href="#section5" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media20.jpg" alt="media20" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media21.webp" alt="media21" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media22.webp" alt="media22" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media23.webp" alt="media23" />
+                  </a>
+                </div>
+                <a href="#section4" class="arrow__btn right-arrow">›</a>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!--THIRD ROW-->
+        <div class="row">
+          <div class="col-12 h4 font-weight-bold text-white pt-4 mb-0">
+            New Releases
+          </div>
+          <div class="col-12">
+            <div class="wrapper">
+              <section id="section7">
+                <a href="#section9" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media24.jpg" alt="media24" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media25.webp" alt="media25" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media26.webp" alt="media26" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="/assets/media/media27.jpg" alt="media27" />
+                  </a>
+                </div>
+                <a href="#section8" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section8">
+                <a href="#section7" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media28.jpg" alt="media28" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media29.jpg" alt="media29" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media30.jpg" alt="media30" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media31.webp" alt="media31" />
+                  </a>
+                </div>
+                <a href="#section9" class="arrow__btn right-arrow">›</a>
+              </section>
+
+              <section id="section9">
+                <a href="#section8" class="arrow__btn left-arrow">‹</a>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media32.jpg" alt="media32" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media10.jpg" alt="media10" />
+                  </a>
+                  <!--Ho finito i media :\ -->
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media20.jpg" alt="media20" />
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="javascript:void(0)">
+                    <img src="/assets/media/media30.jpg" alt="media30" />
+                  </a>
+                </div>
+                <a href="#section7" class="arrow__btn right-arrow">›</a>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center bg-black text-secondary">
+      <div class="container">
+        <div class="row">
+          <!--Social media-->
+          <div class="col">
+            <section class="d-flex pt-4">
+              <div class="d-flex align-items-center justify-content-center">
+                <a href="#" class="me-4 link-secondary fs-2">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="#" class="me-4 link-secondary fs-2">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="#" class="me-4 link-secondary fs-2">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+                <a href="#" class="me-4 link-secondary fs-2">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!--Links  -->
+      <section class="text-start">
+        <div class="container mt-2">
+          <div class="row mt-1 justify-content-center">
+            <div class="col-2 mx-1 mb-4">
+              <p>
+                <a href="#!" class="text-reset">Audio and Subtitles</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Media Center</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Privacy</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Contact us</a>
+              </p>
+            </div>
+
+            <div class="col-2 mx-1 mb-4">
+              <p>
+                <a href="#!" class="text-reset">Audio Description</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Investor Relations</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Legal Notices</a>
+              </p>
+            </div>
+
+
+            <div class="col-2 mx-1 mb-4">
+              <p>
+                <a href="#!" class="text-reset">Help Center</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Jobs</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Cookie Preferences</a>
+              </p>
+            </div>
+
+            <div class="col-2 mx-1 mb-4">
+              <p>
+                <a href="#!" class="text-reset">Gift Cards</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Terms of Use</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Corporate Informations</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="text-center background-blackp-4"
+        >
+          © 2021 Copyright:
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+            >Massolini</a
+          >
+        </div>
+      </section>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -232,6 +524,14 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
   </body>
 </html>
