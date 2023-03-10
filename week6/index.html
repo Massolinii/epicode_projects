@@ -30,7 +30,7 @@
   <body>
     <!--NAV BAR-->
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-dark justify-content-between px-4"
+      class="navbar fixed-top navbar-expand-lg navbar-light bg-dark justify-content-between px-4"
       id="navbar"
     >
       <div class="d-flex align-items-center p-0">
@@ -149,7 +149,10 @@
               <button
                 class="btn background-dark text-secondary border-secondary rounded-0 mr-2 flex-grow-1"
               >
-                <ion-icon name="reorder-three-outline" class="display"></ion-icon>
+                <ion-icon
+                  name="reorder-three-outline"
+                  class="display"
+                ></ion-icon>
               </button>
               <button
                 class="btn background-dark text-secondary border-secondary rounded-0 flex-grow-1"
@@ -477,7 +480,6 @@
               </p>
             </div>
 
-
             <div class="col-2 mx-1 mb-4">
               <p>
                 <a href="#!" class="text-reset">Help Center</a>
@@ -502,15 +504,19 @@
               </p>
             </div>
           </div>
-        </div>
 
-        <div
-          class="text-center background-blackp-4"
-        >
-          © 2021 Copyright:
-          <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
-            >Massolini</a
-          >
+          <div class="row mt-1 justify-content-center">
+            <p class="border-secondary rounded-0">Service code</p>
+          </div>
+
+          <div class="row mt-1 justify-content-center">
+            <div class="background-blackp-4">
+              © 2021 Copyright:
+              <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+                >Massolini Inc.</a
+              >
+            </div>
+          </div>
         </div>
       </section>
     </footer>
