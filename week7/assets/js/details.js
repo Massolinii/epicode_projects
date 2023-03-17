@@ -1,8 +1,8 @@
 let prodId = new URLSearchParams(window.location.search).get("prodId");
 const PRODUCTS_URL = "https://striveschool-api.herokuapp.com/api/product/";
 
-let rowToFill = document.querySelector("#maxContainer .row");
-console.log(prodId)
+let rowToFill = document.getElementById("here");
+console.log(prodId);
 
 const showDetails = async () => {
   let response = await fetch(PRODUCTS_URL + prodId, {
@@ -18,7 +18,6 @@ const showDetails = async () => {
 
   prodDetail.classList.add("col-auto");
   prodDetail.innerHTML = `<div class="card mb-3 border-0" style="width: 100%">
-  <div class="row g-0">
   <div class="col-md-4">
   <img src="${prodData.imageUrl}" class="img-fluid rounded-start" alt="...">
   </div>
@@ -30,7 +29,7 @@ const showDetails = async () => {
   <small class="text-muted">${prodData.brand}</small>
   </p>
   <p>Prezzo: ${prodData.price}$</p>
-  </div></div></div></div>`;
+  </div></div></div>`;
   rowToFill.appendChild(prodDetail);
 };
 
