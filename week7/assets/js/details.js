@@ -2,6 +2,7 @@ let prodId = new URLSearchParams(window.location.search).get("prodId");
 const PRODUCTS_URL = "https://striveschool-api.herokuapp.com/api/product/";
 
 let rowToFill = document.querySelector("#maxContainer .row");
+console.log(prodId)
 
 const showDetails = async () => {
   let response = await fetch(PRODUCTS_URL + prodId, {

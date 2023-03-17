@@ -44,8 +44,8 @@ if (prodId) {
 
       // SE IL PRODOTTO E' GIA ESISTENTE, MODIFICA IL TESTO AGGIUNGI PRODOTTO CON MODIFICA PRODOTTO
       document.getElementById("submit").innerHTML = "Modifica Prodotto";
-
-      let deleteBtn = document.getElementById("backDelete");
+      
+      let deleteBtn = document.getElementById("delete");
       deleteBtn.classList.remove("invisible");
       deleteBtn.addEventListener("click", backDel);
     })
