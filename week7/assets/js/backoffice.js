@@ -14,6 +14,7 @@ const backDel = async () => {
     });
     if (response.ok) {
       alert("Hai eliminato il prodotto.");
+      window.location.replace("./index.html"); // Reindirizza a index.html
     } else {
       alert("ERRORE: Non è stato possibile eliminare il prodotto");
     }

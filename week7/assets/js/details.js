@@ -17,12 +17,12 @@ const showDetails = async () => {
   let prodDetail = document.createElement("div");
 
   prodDetail.classList.add("col-auto");
-  prodDetail.innerHTML = `<div class="card mt-5 w-100">
+  prodDetail.innerHTML = `<div class="card mt-5 w-100 border-1 cardBorder">
   <div class="row g-0">
-    <div class="col-md-6">
-      <img src="${prodData.imageUrl}" class="img-fluid rounded-start" alt="foto_${prodData.name}">
+    <div class="col-8">
+      <img src="${prodData.imageUrl}" class="imgDetails" alt="foto_${prodData.name}">
     </div>
-    <div class="col-md-6">
+    <div class="col-4 cardBackground">
       <div class="card-body">
         <p class="m-0 smallText mark">Nome</p>
         <h2 class="card-title mark">${prodData.name}</h2>
