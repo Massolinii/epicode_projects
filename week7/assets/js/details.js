@@ -17,19 +17,27 @@ const showDetails = async () => {
   let prodDetail = document.createElement("div");
 
   prodDetail.classList.add("col-auto");
-  prodDetail.innerHTML = `<div class="card mb-3 border-0" style="width: 100%">
-  <div class="col-md-4">
-  <img src="${prodData.imageUrl}" class="img-fluid rounded-start" alt="...">
+  prodDetail.innerHTML = `<div class="card mt-5 w-100">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <img src="${prodData.imageUrl}" class="img-fluid rounded-start" alt="foto_${prodData.name}">
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <p class="m-0 smallText mark">Nome</p>
+        <h2 class="card-title mark">${prodData.name}</h2>
+        <p class="m-0 smallText">Descrizione</p>
+        <p class="card-text">${prodData.description}</p>
+        <p class="m-0 smallText ">Brand</p>
+        <div class="card-text">
+          <p class="text-muted">${prodData.brand}</p>
+        </div>
+        <p class="m-0 smallText ">Prezzo</p>
+        <p>Prezzo: ${prodData.price}$</p>
+      </div>
+    </div>
   </div>
-  <div class="col-md-8">
-  <div class="card-body">
-  <h2 class="card-title">${prodData.name}</h2>
-  <p class="card-text">${prodData.description}</p>
-  <p class="card-text">
-  <small class="text-muted">${prodData.brand}</small>
-  </p>
-  <p>Prezzo: ${prodData.price}$</p>
-  </div></div></div>`;
+</div>`;
   rowToFill.appendChild(prodDetail);
 };
 

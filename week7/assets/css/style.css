@@ -93,3 +93,10 @@
 #delete {
     border: 3px solid rgb(192, 112, 112);
 }
+
+.smallText {
+    font-size: small;
+    font-style: italic;
+    font-weight: lighter;
+}
+
