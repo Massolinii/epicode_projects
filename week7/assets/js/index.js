@@ -35,25 +35,24 @@ getProducts();
 
 let createCard = (prodImg, prodName, prodDesc, prodPrice, prodId, prodBrand) => {
   let newCol = document.createElement("div");
-  newCol.classList.add("col-auto");
+  newCol.classList.add("col-6", "col-md-4", "col-lg-3", "col-xl-2");
   newCol.innerHTML = `
-  <div class="card mb-3" style="width: 20em;">
-  <img src="${prodImg}" class="card-img-top" style="max-width: auto; height: 260px;" alt="${prodName}">
-  <div class="card-body" style="height: 200px;">
-  <h5 class="card-title">${prodName}</h5>
-  <p>${prodDesc} - <span class="text-muted">${prodBrand}</span></p>
-  <p>${prodPrice} €</p>
-  <div class="d-flex justify-content-between">
-  <a href="./details.html?prodId=${prodId}" id="btnMore" class="btn btn-light border border-dark">Scopri di più</a>
-  <a href="./backoffice.html?prodId=${prodId}" id="btnModify" class="btn btn-secondary">Modifica</a>
-  </div>
-  </div>
-  </div>`;
-  rowToFill.classList.add("justify-content-center");
+    <div class="card mb-3">
+      <img src="${prodImg}" class="card-img-top" alt="foto_${prodName}">
+      <div class="card-body position-relative">
+        <h5 class="card-title fs-5">${prodName}</h5>
+        <p class="card-text my-1">${prodDesc}</p>
+        <p class="card-text my-1 text-muted">${prodBrand}</p>
+        <p class="card-text my-1">${prodPrice} €</p>
+        <div class="d-flex justify-content-between">
+          <a href="./details.html?prodId=${prodId}" id="btnMore" class="btn btn-light border border-dark btn-sm">Scopri di più</a>
+          <a href="./backoffice.html?prodId=${prodId}" id="btnModify" class="btn btn-secondary border btn-sm">Modifica</a>
+        </div>
+      </div>
+    </div>`;
+  rowToFill.classList.add("justify-content-between");
   rowToFill.appendChild(newCol);
 };
-
-
 
 /* AUTHORIZATION :
 fetch("https://striveschool-api.herokuapp.com/api/put-your-endpoint-here/", {

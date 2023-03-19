@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Montserrat&display=swap');
 
-
+/*-------------NAVBAR-------------*/
 
 .navbar {
-    background-color: rgb(255, 255, 255);
+    background-image: url(/assets/bg/bg-grey.jpg);
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -11,14 +11,14 @@
     z-index: 10;
 }
 
-.navbar-brand {
-    font-family: 'Karla', sans-serif;
-}
-
 .logo {
     width: 70px;
     height: auto;
-  }
+}
+
+.navbar-brand {
+    font-family: 'Karla', sans-serif;
+}
 
 .navbar-collapse {
     flex: 0;
@@ -33,8 +33,30 @@
 
 #cart {
     font-size: xx-large;
+    height: 50px;
+    width: 50px;
 }
+
+/*-------------CONTAINER-------------*/
 
 #backgroundH1 {
     background-color: rgb(230, 230, 230);
 }
+
+#backgroundCont {
+    background-image: url(/assets/bg/bg-grey.jpg);
+    background-size:cover;
+    background-repeat: 100%;
+    height: 100vh;
+    width: auto;
+}
+
+.card {
+    width: 230px;
+}
+
+.card-img-top {
+    height: 170px; 
+    width: 100%;
+}
+
