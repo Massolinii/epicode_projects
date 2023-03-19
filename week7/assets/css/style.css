@@ -51,12 +51,45 @@
     width: auto;
 }
 
+.typewriter h1 {
+    overflow: hidden; 
+    border-right: .15em solid rgb(53, 53, 53); /* Cursore Typewriter */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
 .card {
     width: 230px;
 }
 
 .card-img-top {
-    height: 170px; 
+    height: 270px; 
     width: 100%;
 }
 
+#submit {
+    border: 3px solid rgb(116, 184, 116);
+}
+
+#reset {
+    border: 3px solid rgb(207, 197, 51);
+}
+
+#delete {
+    border: 3px solid rgb(192, 112, 112);
+}

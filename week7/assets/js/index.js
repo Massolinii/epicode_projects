@@ -35,12 +35,12 @@ getProducts();
 
 let createCard = (prodImg, prodName, prodDesc, prodPrice, prodId, prodBrand) => {
   let newCol = document.createElement("div");
-  newCol.classList.add("col-6", "col-md-4", "col-lg-3", "col-xl-2");
+  newCol.classList.add("col-6", "col-md-4", "col-lg-3");
   newCol.innerHTML = `
     <div class="card mb-3">
       <img src="${prodImg}" class="card-img-top" alt="foto_${prodName}">
       <div class="card-body position-relative">
-        <h5 class="card-title fs-5">${prodName}</h5>
+        <h5 class="card-title fs-5 mark">${prodName}</h5>
         <p class="card-text my-1">${prodDesc}</p>
         <p class="card-text my-1 text-muted">${prodBrand}</p>
         <p class="card-text my-1">${prodPrice} €</p>

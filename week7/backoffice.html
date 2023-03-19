@@ -19,16 +19,10 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-
-        <div>
-          <img src="/assets/img/logo.png" alt="" class="logo">
-            <a class="navbar-brand" href="index.html">CRUDAZON</a>
-        </div>
-        
+    <nav class="navbar navbar-expand-lg border-bottom border-secondary">
+      <div class="container-fluid justify-content-between">
         <button
-          class="navbar-toggler"
+          class="navbar-toggler border-dark bg-light"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -38,53 +32,61 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
+    
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html"
-                >Home</a
-              >
+              <a class="nav-link px-3 fs-5" aria-current="page" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./backoffice.html">Backoffice</a>
+              <a class="nav-link active px-3 fs-5" href="./backoffice.html">Backoffice</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled px-3 fs-5" href="#">Details</a>
             </li>
           </ul>
         </div>
+    
+        <a class="navbar-brand fs-3" href="index.html">
+          <img src="/assets/img/logo.png" alt="" class="logo"/>CRUDAZON</a>
+  
+        <div></div>
       </div>
     </nav>
 
-    <main>
-      <form class="m-3">
+    <main class="mt-5">
+      <form class="mx-5">
+        <em>
         <div>
-          <label for="prodName" class="form-label">Nome prodotto</label>
-          <input required type="text" class="form-control" id="prodName" />
+          <label for="prodName" class="form-label fs-4 mt-5">Nome prodotto</label> 
+          <input required type="text" class="form-control" id="prodName" placeholder="Inserisci il nome del prodotto" />
         </div>
         <div>
-          <label for="prodDesc" class="form-label">Descrizione prodotto</label>
-          <input required type="textarea" class="form-control" id="prodDesc" />
+          <label for="prodDesc" class="form-label fs-4 mt-4">Descrizione prodotto</label>
+          <input required type="textarea" class="form-control" id="prodDesc" placeholder="Inserisci una breve descrizione"/>
         </div>
         <div>
-          <label for="prodBrand" class="form-label">Brand</label>
-          <input required type="text" class="form-control" id="prodBrand" />
+          <label for="prodBrand" class="form-label fs-4 mt-4">Brand</label>
+          <input required type="text" class="form-control" id="prodBrand" placeholder="Inserisci il brand"/>
         </div>
         <div>
-          <label for="prodImg">Image URL</label>
-          <input required type="text" class="form-control" id="prodImg" />
+          <label for="prodImg" class="form-label fs-4 mt-4">Image URL</label>
+          <input required type="text" class="form-control" id="prodImg" placeholder="LINK all'immagine"/>
         </div>
         <div>
-          <label for="prodPrice">Prezzo (€)</label>
-          <input required type="text" class="form-control" id="prodPrice" />
+          <label for="prodPrice" class="form-label fs-4 mt-4">Prezzo (€)</label>
+          <input required type="number" class="form-control" id="prodPrice" placeholder="Prezzo in euro"/>
         </div>
-        <button id="submit" type="submit" class="btn btn-success m-3">
+        <button id="submit" type="submit" class="btn btn-success m-1 mt-4">
           Aggiungi prodotto
         </button>
-        <button id="reset" type="reset" class="btn btn-warning m-3">
+        <button id="reset" type="reset" class="btn btn-warning m-1 mt-4 ">
           Reset Informazioni
         </button>
-        <button id="delete" type="button" class="btn btn-danger m-3 invisible">
+        <button id="delete" type="button" class="btn btn-danger mr-1 mt-4 invisible">
           Elimina Prodotto
         </button>
+      </em>
       </form>
     </main>
 
