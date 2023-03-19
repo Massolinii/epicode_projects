@@ -38,8 +38,8 @@ let createCard = (prodImg, prodName, prodDesc, prodPrice, prodId, prodBrand) => 
   newCol.classList.add("col-auto");
   newCol.innerHTML = `
   <div class="card mb-3" style="width: 20em;">
-  <img src="${prodImg}" class="card-img-top" style="max-width: auto; max-height: 260px;" alt="${prodName}">
-  <div class="card-body">
+  <img src="${prodImg}" class="card-img-top" style="max-width: auto; height: 260px;" alt="${prodName}">
+  <div class="card-body" style="height: 200px;">
   <h5 class="card-title">${prodName}</h5>
   <p>${prodDesc} - <span class="text-muted">${prodBrand}</span></p>
   <p>${prodPrice} €</p>
@@ -49,6 +49,7 @@ let createCard = (prodImg, prodName, prodDesc, prodPrice, prodId, prodBrand) => 
   </div>
   </div>
   </div>`;
+  rowToFill.classList.add("justify-content-center");
   rowToFill.appendChild(newCol);
 };
 

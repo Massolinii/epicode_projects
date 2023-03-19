@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Montserrat&display=swap');
+
+
+
+.navbar {
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar-brand {
+    font-family: 'Karla', sans-serif;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+  }
+
+.navbar-collapse {
+    flex: 0;
+    width: 0px;
+    overflow: visible; /* Per non modificare la posizione del logo nella navbar, utilizzando "content-space-between" */
+}
+
+.nav-link, h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+#cart {
+    font-size: xx-large;
+}
+
+#backgroundH1 {
+    background-color: rgb(230, 230, 230);
+}
