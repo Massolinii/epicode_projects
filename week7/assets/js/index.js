@@ -2,6 +2,7 @@ const PRODUCTS_URL = "https://striveschool-api.herokuapp.com/api/product/";
 
 let rowToFill = document.querySelector("#maxContainer .row");
 
+/* Nasconde lo Spinner al caricamento */
 const hideSpinner = () => {
   let spinnerEl = document.getElementById("spinner");
   spinnerEl.classList.add("d-none");
@@ -33,6 +34,8 @@ const getProducts = async function () {
 };
 getProducts();
 
+
+/* Generazione delle Card */
 let createCard = (prodImg, prodName, prodDesc, prodPrice, prodId, prodBrand) => {
   let newCol = document.createElement("div");
   newCol.classList.add("col-6", "col-md-4", "col-lg-3");

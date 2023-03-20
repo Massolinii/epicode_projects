@@ -4,6 +4,8 @@ const PRODUCTS_URL = "https://striveschool-api.herokuapp.com/api/product/";
 let rowToFill = document.getElementById("here");
 console.log(prodId);
 
+
+/* Generazione DESCRIPTION */ 
 const showDetails = async () => {
   let response = await fetch(PRODUCTS_URL + prodId, {
     method: "GET",
