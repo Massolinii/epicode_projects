@@ -32,7 +32,7 @@ function Footer() {
           <section className="text-start">
             <div className="container mt-2">
               <div className="row mt-1 justify-content-center">
-                <div className="col-2 mx-1 mb-4">
+                <div className="col-5 col-md-2 mx-1 bRight">
                   <p>
                     <a href="#!" className="text-reset">Audio and Subtitles</a>
                   </p>
@@ -46,7 +46,7 @@ function Footer() {
                     <a href="#!" className="text-reset">Contact us</a>
                   </p>
                 </div>
-                <div className="col-2 mx-1 mb-4">
+                <div className="col-5 col-md-2 mx-1 bRight">
                   <p>
                     <a href="#!" className="text-reset">Audio Description</a>
                   </p>
@@ -57,7 +57,7 @@ function Footer() {
                     <a href="#!" className="text-reset">Legal Notices</a>
                   </p>
                 </div>
-                <div className="col-2 mx-1 mb-4">
+                <div className="col-5 col-md-2 mx-1 bRight">
                   <p>
                     <a href="#!" className="text-reset">Help Center</a>
                   </p>
@@ -68,7 +68,7 @@ function Footer() {
                     <a href="#!" className="text-reset">Cookie Preferences</a>
                   </p>
                 </div>
-                <div className="col-2 mx-1 mb-4">
+                <div className="col-5 col-md-2 mx-1 bRightToRemove">
                   <p>
                     <a href="#!" className="text-reset">Gift Cards</a>
                   </p>
@@ -81,12 +81,14 @@ function Footer() {
                 </div>
               </div>
               <div className="row mt-1 justify-content-center">
-                <div className="border-secondary rounded-0 mb-4">Service code</div>
+                <div className='mb-2 serv'>
+                    Service code
+                </div>
               </div>
               <div className="row mt-1 justify-content-center">
-                <div className="background-blackp-4">
-                  © 1997-2019 Netflix Inc. Copyright:
-                  <a className="text-reset fw-bold" href="https://mdbootstrap.com/">Massolini Inc.</a>
+                <div className="background-blackp-4 serv">
+                  © 1997-2023 Netflix Inc. Copyright:
+                  <a className="text-reset fw-bold ps-2" href="https://github.com/Massolinii">Massolini Inc.</a>
                 </div>
               </div>
             </div>
