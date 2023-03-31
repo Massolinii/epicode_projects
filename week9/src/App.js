@@ -16,6 +16,7 @@ class App extends Component {
 
   // Funzione per gestire l'azione di ricerca dal componente SearchBar
  handleSearch = (searchQuery) => {
+  // gestione degli white space nel campo di ricerca
   this.setState({ searchQuery: searchQuery.replace(/\s+/g, '%20') });
 };
 
