@@ -15,9 +15,9 @@ class App extends Component {
   };
 
   // Funzione per gestire l'azione di ricerca dal componente SearchBar
-  handleSearch = (searchQuery) => {
-    this.setState({ searchQuery });
-  };
+ handleSearch = (searchQuery) => {
+  this.setState({ searchQuery: searchQuery.replace(/\s+/g, '%20') });
+};
 
   // Endpoint per la ricerca statica
   render() {

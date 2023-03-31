@@ -19,12 +19,17 @@ class FilmCarousel extends Component {
       if (response.ok) {
         let data = await response.json();
         console.log(data);
-        // Aggiorna filmSAga con i dati ricevuti
-        this.setState({
-          filmSaga: data.Search,
-        });
+        // Checka l'esistenza di un search prima di iniziare la ricerca
+        if (data.Search) {
+          this.setState({
+            filmSaga: data.Search,
+          });
+        } else {
+          this.setState({
+            filmSaga: [],
+          });
+        }
       } else {
-        // gestione errori
         console.log("ERROR : Something went wrong in the API call");
       }
     } catch (error) {
