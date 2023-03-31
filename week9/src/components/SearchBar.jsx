@@ -18,7 +18,7 @@ class SearchBar extends Component {
 
      // Ritorna il JSX stampato
     return (
-      <InputGroup className="my-3 searchBar">
+      <InputGroup className="my-3 mb-5 searchBar">
         <FormControl
           placeholder="Search movies..."
           value={this.state.searchQuery}
