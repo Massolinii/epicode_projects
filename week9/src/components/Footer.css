@@ -2,4 +2,25 @@
     background: rgb(34,34,34);
     background: linear-gradient(0deg, rgba(34,34,34,1) 0%, rgba(0,0,0,1) 95%);
     border-top: 1px solid rgb(54, 54, 54);
+    margin-top: 10px;
+    padding-bottom: 20px;
 }
+
+a, .serv {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.bRight {
+    border-right: 1px solid rgb(49, 49, 49);
+}
+
+.bRightToRemove {
+    border-right: 1px solid rgb(49, 49, 49);
+}
+
+@media (min-width: 768px) {
+    .bRightToRemove {
+      border-right: none;
+    }
+  }

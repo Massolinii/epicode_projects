@@ -35,7 +35,7 @@ class FilmCarousel extends Component {
   render() {
     return (
       <div className="carousel-container">
-        <Container>
+        <Container fluid>
           <Carousel
             nextIcon={
               <span aria-hidden="true" className="carousel-control-next-icon" />
