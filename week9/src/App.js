@@ -8,14 +8,18 @@ import FilmCarousel from "./components/FilmCarousel";
 import Footer from "./components/Footer";
 
 class App extends Component {
+
+  // Inizializza lo stato per la query di ricerca
   state = {
     searchQuery: "",
   };
 
+  // Funzione per gestire l'azione di ricerca dal componente SearchBar
   handleSearch = (searchQuery) => {
     this.setState({ searchQuery });
   };
 
+  // Endpoint per la ricerca statica
   render() {
     const potter = "harry%20potter";
     const marvel = "marvel";
@@ -27,6 +31,7 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <Jumbotron />
+        <h2 className="collectionTitle">Search</h2>
         <SearchBar onSearch={this.handleSearch} />
         {this.state.searchQuery && (
           <>
@@ -34,6 +39,8 @@ class App extends Component {
             <FilmCarousel myEndpoint={this.state.searchQuery} />
           </>
         )}
+
+        {/* Impossibile trovare una query di ricerca "soddisfacente" per i titoli dinamici, i risultati erano tipo "potter" che come titolo non è il massimo */}
         <h2 className="collectionTitle">The Boy Who Lived - Harry Potter's Saga</h2>
         <FilmCarousel myEndpoint={potter} />
         <h2 className="collectionTitle">Star Wars - The Original Sixology :</h2>
@@ -51,3 +58,5 @@ class App extends Component {
 }
 
 export default App;
+
+// E mettiamoli sti 10 professò <3
