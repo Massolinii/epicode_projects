@@ -34,7 +34,7 @@ class FilmCarousel extends Component {
 
   render() {
     return (
-      <div className="mt-5">
+      <div className="carousel-container">
         <Container>
           <Carousel
             nextIcon={
