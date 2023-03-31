@@ -32,6 +32,12 @@ class FilmCarousel extends Component {
     await this.getAllReservation(this.props.myEndpoint);
   }
 
+  async componentDidUpdate(prevProps) {
+    if (prevProps.myEndpoint !== this.props.myEndpoint) {
+      await this.getAllReservation(this.props.myEndpoint);
+    }
+  }
+
   render() {
     return (
       <div className="carousel-container">
@@ -48,7 +54,7 @@ class FilmCarousel extends Component {
             {this.state.filmSaga.map((Search, index) => {
               if (index % 6 === 0) {
                 return (
-                  <Carousel.Item>
+                  <Carousel.Item key={index}>
                     <Row className="d-flex flex-nowrap overflow-hidden  gx-5">
                       {this.state.filmSaga.map((data) => (
                         <Col
