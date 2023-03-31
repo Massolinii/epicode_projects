@@ -1,0 +1,12 @@
+.col {
+  padding: 0 5px;
+}
+
+.carousel .row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.d-block {
+  margin: 10px auto;
+}
