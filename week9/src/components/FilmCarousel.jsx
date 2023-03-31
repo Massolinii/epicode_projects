@@ -2,7 +2,6 @@ import Carousel from "react-bootstrap/Carousel";
 import { Component } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./FilmCarousel.css";
 
 class FilmCarousel extends Component {
   // inizializza l'array come vuoto
