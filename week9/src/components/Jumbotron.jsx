@@ -3,6 +3,7 @@ import './Jumbotron.css';
 
 function Jumbotron() {
   return (
+    // Il "jumbotron" è un div con background image, e text elevato con z-index (per sicurezza)
     <div
       className="jumbotron"
       style={{
@@ -15,6 +16,7 @@ function Jumbotron() {
         <p>The absolutely not over-acclaimed series made by Netflix.</p>
         <p>Because screw you if you wanted to watch some good stuff.</p>
         <p>Oh and also Big Mouth as been renewed for Season 7. How lucky we are.</p>
+        {/* Button Watch Now */}
         <button className="jumbotron-button">Watch Now</button>
       </div>
       

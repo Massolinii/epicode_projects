@@ -5,10 +5,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./FilmCarousel.css";
 
 class FilmCarousel extends Component {
+  // inizializza l'array come vuoto
   state = {
     filmSaga: [],
   };
 
+  // Funzione di fetch dall'API basato sull'endpoint
   getAllReservation = async (Endpoint) => {
     try {
       let response = await fetch(
@@ -17,10 +19,12 @@ class FilmCarousel extends Component {
       if (response.ok) {
         let data = await response.json();
         console.log(data);
+        // Aggiorna filmSAga con i dati ricevuti
         this.setState({
           filmSaga: data.Search,
         });
       } else {
+        // gestione errori
         console.log("ERROR : Something went wrong in the API call");
       }
     } catch (error) {
@@ -28,16 +32,19 @@ class FilmCarousel extends Component {
     }
   };
 
+  // Chiamato una volta che il component è montato
   async componentDidMount() {
     await this.getAllReservation(this.props.myEndpoint);
   }
 
+  // Chiamato all'aggiornamento del component
   async componentDidUpdate(prevProps) {
     if (prevProps.myEndpoint !== this.props.myEndpoint) {
       await this.getAllReservation(this.props.myEndpoint);
     }
   }
 
+  // UI
   render() {
     return (
       <div className="carousel-container">
@@ -51,11 +58,13 @@ class FilmCarousel extends Component {
             }
             indicators={false}
           >
+            {/* Mappa attraverso filmSaga e crea i Carousel Items*/}
             {this.state.filmSaga.map((Search, index) => {
               if (index % 6 === 0) {
                 return (
                   <Carousel.Item key={index}>
                     <Row className="d-flex flex-nowrap overflow-hidden  gx-5">
+                      {/* Mappa attraverso filmSaga NUOVAMENTE e crea i movie Items*/}
                       {this.state.filmSaga.map((data) => (
                         <Col
                           xs={6}
@@ -65,6 +74,7 @@ class FilmCarousel extends Component {
                           key={data.imdbID}
                           className="p-0 d-flex justify-content-center"
                         >
+                          {/* Mostra i poster dei film*/}
                           <img
                             className="d-block w-100 m-2"
                             src={data.Poster}

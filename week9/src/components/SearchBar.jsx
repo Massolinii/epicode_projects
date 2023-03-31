@@ -3,10 +3,12 @@ import { InputGroup, FormControl, Button } from "react-bootstrap";
 import "./SearchBar.css";
 
 class SearchBar extends Component {
+  // Inizializza il componente search con una query vuota
   state = {
     searchQuery: "",
   };
 
+  // funzione Handler per aggiornare la query di ricerca nello state
   handleInputChange = (event) => {
     this.setState({ searchQuery: event.target.value });
   };
@@ -14,6 +16,7 @@ class SearchBar extends Component {
   render() {
     const { onSearch } = this.props;
 
+     // Ritorna il JSX stampato
     return (
       <InputGroup className="my-3 searchBar">
         <FormControl

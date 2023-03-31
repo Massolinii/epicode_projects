@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Oswald:wght@500&display=swap');
 
+
+/* Container Jumbotron*/
 .jumbotron {
     position: relative;
     height: 100vh;
@@ -8,14 +10,16 @@
     display: flex;
     align-items: center;
     color: white;
-    padding-left: 5em;
+    padding-left: 3em;
     margin-bottom: 5em;
   }
   
+  /*Testo Jumbotron*/
   .jumbotron-text {
     z-index: 1;
   }
   
+  /*Overlay scuro Jumbotron*/
   .jumbotron::before {
     content: '';
     position: absolute;
@@ -37,6 +41,7 @@
     font-family: 'Barlow', sans-serif;
   }
 
+  /*BUTTON */
   .jumbotron-button {
     background: none;
     border: 1px solid white;
@@ -56,7 +61,7 @@
     background-color: #ce0606;
   }
 
-  /* Small devices (landscape phones, 576px and up) */
+  /* SM (576px a salire) */
 @media (min-width: 576px) and (max-width: 767px) {
     .jumbotron {
       padding-left: 2em;
@@ -67,7 +72,7 @@
     }
   }
   
-  /* Extra small devices (portrait phones, less than 576px) */
+  /* XS (575px a scendere) */
   @media (max-width: 575px) {
     .jumbotron {
       padding-left: 1em;

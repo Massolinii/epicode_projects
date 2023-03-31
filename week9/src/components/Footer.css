@@ -15,6 +15,8 @@ a, .serv {
     border-right: 1px solid rgb(49, 49, 49);
 }
 
+/*Al restringimento della pagina, aggiunge un border-right per dare visione d'insieme al Footer*/
+
 .bRightToRemove {
     border-right: 1px solid rgb(49, 49, 49);
 }
@@ -24,3 +26,4 @@ a, .serv {
       border-right: none;
     }
   }
+
