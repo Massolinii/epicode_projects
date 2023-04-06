@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import CustomNavbar from "./components/CustomNavbar";
+import CustomNavbar from "./components/CustomNavbar.jsx";
 
 function App() {
   return (
