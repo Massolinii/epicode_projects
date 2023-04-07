@@ -4,8 +4,8 @@ import { Container, Row, Col } from "react-bootstrap";
 function TownCard() {
   return (
     <Container>
-      <Row>
-        <Col>
+      <Row className="textLeft">
+        <Col className="col-12">
           <Card className="mx-auto mt-3">
             <Card.Body>
               <Card.Title>City Title</Card.Title>
