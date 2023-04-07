@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { ListGroup, Dropdown } from "react-bootstrap";
@@ -11,23 +11,33 @@ const Searchbar = function () {
   const [suggestions, setSuggestions] = useState([]);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    if (city.length > 2) {
-      fetchSuggestions();
-    } else {
-      setSuggestions([]);
-    }
-  }, [city]);
-
-  const fetchSuggestions = async (e) => {
-    e.preventDefault();
+  const fetchSuggestions = async () => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&limit=5&appid=${API_KEY}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${API_KEY}`
       );
       const data = await response.json();
       setSuggestions(data);
-      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    await fetchSuggestions();
+  };
+
+  const onSelectCity = async (cityName, country) => {
+    setCity(`${cityName}, ${country}`);
+    setSuggestions([]);
+    try {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`
+      );
+      const data = await response.json();
+      setWeatherData([data]);
+      setError(null);
     } catch (error) {
       console.error(error);
       setError("City not found");
@@ -35,14 +45,9 @@ const Searchbar = function () {
     }
   };
 
-  const onSelectCity = (cityName) => {
-    setCity(cityName);
-    setSuggestions([]);
-  };
-
   return (
     <>
-      <Form className="d-flex">
+      <Form className="d-flex" onSubmit={handleSearch}>
         <Form.Control
           type="search"
           placeholder="Search"
@@ -60,7 +65,7 @@ const Searchbar = function () {
           {suggestions.map((suggestion) => (
             <Dropdown.Item
               key={suggestion.id}
-              onClick={() => onSelectCity(suggestion.name)}
+              onClick={() => onSelectCity(suggestion.name, suggestion.country)}
             >
               {suggestion.name}, {suggestion.country}
             </Dropdown.Item>
@@ -73,9 +78,20 @@ const Searchbar = function () {
           {weatherData.map((data) => (
             <ListGroup.Item key={data.id}>
               <h2>{data.name}</h2>
-              <p>Temperature: {data.main.temp}</p>
-              <p>Humidity: {data.main.humidity}</p>
-              <p>Description: {data.weather[0].description}</p>
+              <p>
+                Temperature:{" "}
+                {data.main && data.main.temp ? data.main.temp : "N/A"}
+              </p>
+              <p>
+                Humidity:{" "}
+                {data.main && data.main.humidity ? data.main.humidity : "N/A"}
+              </p>
+              <p>
+                Description:{" "}
+                {data.weather && data.weather[0] && data.weather[0].description
+                  ? data.weather[0].description
+                  : "N/A"}
+              </p>
             </ListGroup.Item>
           ))}
         </ListGroup>
