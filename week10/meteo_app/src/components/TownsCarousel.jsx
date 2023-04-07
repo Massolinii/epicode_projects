@@ -1,6 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 
-function HomeCarousel() {
+function TownsCarousel() {
   return (
     <Carousel>
       <Carousel.Item>
@@ -18,4 +18,4 @@ function HomeCarousel() {
   );
 }
 
-export default HomeCarousel;
+export default TownsCarousel;

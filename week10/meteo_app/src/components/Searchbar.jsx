@@ -1,18 +1,20 @@
 import { useState } from "react";
+
+import { ListGroup, Dropdown } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { ListGroup, Dropdown } from "react-bootstrap";
+
 import { Link } from "react-router-dom/dist";
 
 const API_KEY = "6cbf0b3cb080c11f09fe6ba72bb563b5";
 
-function convertKelvinToCelsius(kelvin) {
+function tempConverter(kelvin) {
   const celsius = kelvin - 273.15;
-  return Math.round(celsius * 100) / 100;
+  return Math.floor(celsius * 100) / 100;
 }
 
 const Searchbar = function () {
-  const [city, setCity] = useState("");
+  const [town, setTown] = useState("");
   const [weatherData, setWeatherData] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
   const [error, setError] = useState(null);
@@ -20,7 +22,7 @@ const Searchbar = function () {
   const fetchSuggestions = async () => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${API_KEY}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${town}&limit=5&appid=${API_KEY}`
       );
       const data = await response.json();
       setSuggestions(data);
@@ -34,12 +36,12 @@ const Searchbar = function () {
     await fetchSuggestions();
   };
 
-  const onSelectCity = async (cityName, country) => {
-    setCity(`${cityName}, ${country}`);
+  const onSelectTown = async (townName, country) => {
+    setTown(`${townName}, ${country}`);
     setSuggestions([]);
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${townName}&appid=${API_KEY}`
       );
       const data = await response.json();
       setWeatherData([data]);
@@ -60,34 +62,38 @@ const Searchbar = function () {
           placeholder="Search"
           className="me-2"
           aria-label="Search"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
+          value={town}
+          onChange={(e) => setTown(e.target.value)}
         />
         <Button variant="outline-success" type="submit">
           Search
         </Button>
       </Form>
       {suggestions.length > 0 && (
-        <Dropdown.Menu show>
-          {suggestions.map((suggestion) => (
-            <Dropdown.Item
-              key={suggestion.id}
-              onClick={() => onSelectCity(suggestion.name, suggestion.country)}
-            >
-              {suggestion.name}, {suggestion.country}
-            </Dropdown.Item>
-          ))}
-        </Dropdown.Menu>
+        <ListGroup.Item key="suggestions-dropdown">
+          <Dropdown.Menu show>
+            {suggestions.map((suggestion) => (
+              <Dropdown.Item
+                key={suggestion.id}
+                onClick={() =>
+                  onSelectTown(suggestion.name, suggestion.country)
+                }
+              >
+                {suggestion.name}, {suggestion.country}
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </ListGroup.Item>
       )}
       {error && <p>{error}</p>}
       {weatherData.length > 0 && (
         <ListGroup>
           {weatherData.map((data, i) => (
-            <ListGroup.Item key={data.id + i}>
+            <ListGroup.Item key={data.name + i}>
               <h2>{data.name}</h2>
               <h3 className="fs-1">
                 {data.main && data.main.temp
-                  ? Math.round(convertKelvinToCelsius(data.main.temp)) + "°C"
+                  ? Math.round(tempConverter(data.main.temp)) + "°C"
                   : "N/A"}
               </h3>
               <p>
@@ -96,9 +102,9 @@ const Searchbar = function () {
                   ? data.weather[0].description
                   : "N/A"}
               </p>
-              <Link to={`/${data.company_name}`}>
+              <Link to={"/town/" + data.name}>
                 <Button className="bg-white text-primary px-4 border border-2 border-primary">
-                  {data.company_name}
+                  See More
                 </Button>
               </Link>
             </ListGroup.Item>

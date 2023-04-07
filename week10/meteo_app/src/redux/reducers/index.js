@@ -5,6 +5,7 @@ const initialState = {
 };
 
 const mainReducer = (state = initialState, action) => {
+  console.log("Action received:", action);
   switch (action.type) {
     case "ADD_TO_FAV":
       if (state.favourite.content.includes(action.payload)) {

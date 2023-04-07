@@ -1,10 +1,16 @@
 import Card from "react-bootstrap/Card";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function HomeCard() {
   return (
     <Container>
       <Row>
+        <Col className="col-12">
+          <Link to="/your-cities" id="home-link">
+            <Button className="m-5 mt-2">Favourite CompanyList</Button>
+          </Link>
+        </Col>
         <Col>
           <Card className="mx-auto mt-3">
             <Card.Body>
