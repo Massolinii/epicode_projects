@@ -5,16 +5,14 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 function MyNavbar() {
   return (
-    <Navbar bg="light" expand="md">
+    <Navbar bg="light" expand="md" fixed="bottom" className="navBar">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">
+          <img src="/Weather-logo.png" alt="Your Site Logo" className="logo" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
+          <Nav className="ms-auto my-2 my-lg-0">
             <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
