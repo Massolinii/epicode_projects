@@ -67,9 +67,6 @@ const TownCard = ({ town, currentTemp }) => {
             </Card.Body>
           </Card>
         </Col>
-        <Col className="my-2 bg-white rounded">
-          <h3>Watch {town.name}'s weather forecast for the next 24 hours:</h3>
-        </Col>
       </Row>
     </Container>
   );
