@@ -18,9 +18,9 @@ root.render(
     <Provider store={store}>
       <App />
       <Routes>
-        <Route path="./" element={<Home />} />
-        <Route path="./:city" element={<TownPage />} />
-        <Route path="./your-cities" element={<MyTowns />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/:city" element={<TownPage />} />
+        <Route path="/your-cities" element={<MyTowns />} />
       </Routes>
     </Provider>
   </BrowserRouter>

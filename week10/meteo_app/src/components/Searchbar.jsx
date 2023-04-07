@@ -2,8 +2,14 @@ import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { ListGroup, Dropdown } from "react-bootstrap";
+import { Link } from "react-router-dom/dist";
 
 const API_KEY = "6cbf0b3cb080c11f09fe6ba72bb563b5";
+
+function convertKelvinToCelsius(kelvin) {
+  const celsius = kelvin - 273.15;
+  return Math.round(celsius * 100) / 100;
+}
 
 const Searchbar = function () {
   const [city, setCity] = useState("");
@@ -38,6 +44,7 @@ const Searchbar = function () {
       const data = await response.json();
       setWeatherData([data]);
       setError(null);
+      console.log(data);
     } catch (error) {
       console.error(error);
       setError("City not found");
@@ -75,23 +82,25 @@ const Searchbar = function () {
       {error && <p>{error}</p>}
       {weatherData.length > 0 && (
         <ListGroup>
-          {weatherData.map((data) => (
-            <ListGroup.Item key={data.id}>
+          {weatherData.map((data, i) => (
+            <ListGroup.Item key={data.id + i}>
               <h2>{data.name}</h2>
-              <p>
-                Temperature:{" "}
-                {data.main && data.main.temp ? data.main.temp : "N/A"}
-              </p>
-              <p>
-                Humidity:{" "}
-                {data.main && data.main.humidity ? data.main.humidity : "N/A"}
-              </p>
+              <h3 className="fs-1">
+                {data.main && data.main.temp
+                  ? Math.round(convertKelvinToCelsius(data.main.temp)) + "°C"
+                  : "N/A"}
+              </h3>
               <p>
                 Description:{" "}
                 {data.weather && data.weather[0] && data.weather[0].description
                   ? data.weather[0].description
                   : "N/A"}
               </p>
+              <Link to={`/${data.company_name}`}>
+                <Button className="bg-white text-primary px-4 border border-2 border-primary">
+                  {data.company_name}
+                </Button>
+              </Link>
             </ListGroup.Item>
           ))}
         </ListGroup>

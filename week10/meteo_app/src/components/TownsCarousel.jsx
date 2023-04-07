@@ -5,7 +5,7 @@ function HomeCarousel() {
     <Carousel>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-75 mx-auto my-4"
           src="https://tse4.mm.bing.net/th?id=OIP.bjM7JYBClr7cv0bSPS16jQHaEK&pid=Api&P=0"
           alt="First slide"
         />
