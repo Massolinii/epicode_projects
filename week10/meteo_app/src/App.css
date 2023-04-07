@@ -54,6 +54,18 @@
   height: 80px;
 }
 
+.searchCard {
+  margin: 1em auto;
+  width: 45%;
+  background: rgb(32, 218, 240);
+  background: linear-gradient(
+    61deg,
+    rgba(32, 218, 240, 1) 0%,
+    rgba(231, 231, 231, 1) 50%,
+    rgba(32, 218, 240, 1) 100%
+  );
+}
+
 .mainCards {
   width: 75%;
   background: rgb(153, 231, 240);
@@ -71,17 +83,20 @@
   }
 }
 
-.mainCardTitle {
+.mainCardTitle,
+.linkTitle {
   font-size: xx-large;
+  text-decoration: none;
 }
 
-.mainCardTemp {
-  font-size: large;
-  font-weight: 600;
+.mainCardsButton {
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+  border: 1px solid grey;
 }
 
 .viewFav {
-  background-color: rgba(255, 255, 255, 0.548);
+  background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid white;
   font-size: 1.3em;
   color: black;
@@ -90,7 +105,7 @@
 }
 
 .viewFav:hover {
-  background-color: rgba(255, 255, 255, 0.788);
+  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid rgb(0, 0, 0);
   font-size: 1.3em;
   color: black;
