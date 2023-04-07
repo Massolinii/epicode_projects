@@ -1,9 +1,7 @@
-import { Container, Button, Carousel, Card, Row, Col } from "react-bootstrap";
+import { Container, Card, Row, Col } from "react-bootstrap";
 import TownCard from "./TownCard";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
-import { useDispatch } from "react-redux";
 
 function tempConverter(kelvin) {
   const celsius = kelvin - 273.15;
@@ -88,27 +86,18 @@ function TownPage() {
     }
   };
 
-  const dispatch = useDispatch();
-
   useEffect(() => {
-    getTownDetails();
-    getTownForecast();
-  }, []);
+    if (params.name) {
+      getTownDetails();
+      getTownForecast();
+    }
+  }, [params.name]);
 
   return (
     <Container>
-      <Button
-        color="danger"
-        onClick={() => {
-          dispatch({
-            type: "ADD_TO_FAV",
-            payload: params.name,
-          });
-        }}
-      >
-        Add to your Favourites
-      </Button>
-      {town !== null && <TownCard town={town} />}
+      {town !== null && (
+        <TownCard town={town} currentTemp={tempConverter(town.main.temp)} />
+      )}
       {forecast.length > 0 && (
         <Row xs={1} sm={2} md={3} className="g-4">
           {forecast.map((item, index) => (
@@ -116,7 +105,12 @@ function TownPage() {
               <Card className="mx-auto">
                 <Card.Body>
                   <Card.Title>
-                    {new Date(item.dt * 1000).toLocaleString()}
+                    {
+                      new Date(item.dt * 1000)
+                        .toLocaleTimeString()
+                        .split(":")[0]
+                    }
+                    :00
                   </Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">
                     {Math.round(tempConverter(item.main.temp))}°C
@@ -126,7 +120,8 @@ function TownPage() {
                     {item.weather &&
                     item.weather[0] &&
                     item.weather[0].description
-                      ? item.weather[0].description
+                      ? item.weather[0].description.charAt(0).toUpperCase() +
+                        item.weather[0].description.slice(1)
                       : "N/A"}
                   </Card.Text>
                 </Card.Body>
@@ -135,6 +130,9 @@ function TownPage() {
           ))}
         </Row>
       )}
+      <h2 className="my-2 bg-white rounded">
+        Watch the weather forecast for the next 5 days
+      </h2>
       {nextDaysAverages.length > 0 && (
         <Row xs={1} sm={2} md={3} className="g-4">
           {nextDaysAverages.map((item, index) => (
@@ -145,7 +143,7 @@ function TownPage() {
                   <Card.Subtitle className="mb-2 text-muted">
                     {Math.round(tempConverter(item.avgTemp))}°C
                   </Card.Subtitle>
-                  <Card.Text>Temperature media giornaliera</Card.Text>
+                  <Card.Text>Daily Temperature </Card.Text>
                 </Card.Body>
               </Card>
             </Col>

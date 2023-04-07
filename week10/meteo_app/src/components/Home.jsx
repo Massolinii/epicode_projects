@@ -12,7 +12,9 @@ const MyHome = () => {
       </Row>
 
       <Row>
+        <MainHome cityName={"Milano"} />
         <MainHome cityName={"Roma"} />
+        <MainHome cityName={"Napoli"} />
       </Row>
 
       <Row>

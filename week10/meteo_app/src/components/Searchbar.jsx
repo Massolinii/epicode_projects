@@ -99,7 +99,7 @@ const Searchbar = function () {
       {weatherData.length > 0 && (
         <ListGroup>
           {weatherData.map((data, i) => (
-            <ListGroup.Item key={data.name + i}>
+            <ListGroup.Item key={data.name + i} className="searchCard">
               <h2>{data.name}</h2>
               <h3 className="fs-1">
                 {data.main && data.main.temp
@@ -107,9 +107,10 @@ const Searchbar = function () {
                   : "N/A"}
               </h3>
               <p>
-                Description:{" "}
+                Weather:{" "}
                 {data.weather && data.weather[0] && data.weather[0].description
-                  ? data.weather[0].description
+                  ? data.weather[0].description.charAt(0).toUpperCase() +
+                    data.weather[0].description.slice(1)
                   : "N/A"}
               </p>
               <Link to={"/town/" + data.name}>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Card from "react-bootstrap/Card";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function tempConverter(kelvin) {
   const celsius = kelvin - 273.15;
@@ -37,13 +37,13 @@ function MainHome({ cityName }) {
         <Col>
           <Card className="mx-auto mt-3 mx-auto textLeft mainCards">
             <Card.Body>
+              <Link className="linkTitle" to={`/town/${cityData?.name}`}>
+                <Card.Title className="mainCardTitle">
+                  {cityData ? cityData.name : "Loading..."}
+                </Card.Title>
+              </Link>
               <Row>
-                <Col className="col-4">
-                  <Card.Title className="mainCardTitle">
-                    {cityData ? cityData.name : "Loading..."}
-                  </Card.Title>
-                </Col>
-                <Col className="d-flex col-2 align-items-center">
+                <Col className="d-flex col-3 align-items-center">
                   <Card.Text>
                     Temperature: <br />
                     {cityData
@@ -51,13 +51,13 @@ function MainHome({ cityName }) {
                       : "Loading..."}
                   </Card.Text>
                 </Col>
-                <Col className="d-flex col-2 align-items-center">
+                <Col className="d-flex col-3 align-items-center">
                   <Card.Text className="mainCardHumidity">
                     Humidity: <br />
                     {cityData ? `${cityData.main.humidity}%` : "Loading..."}
                   </Card.Text>
                 </Col>
-                <Col className="d-flex col-4 align-items-center">
+                <Col className="d-flex col-3 align-items-center">
                   <Card.Text className="mainCardWeather">
                     Weather: <br />
                     {cityData && cityData.weather && cityData.weather[0]
