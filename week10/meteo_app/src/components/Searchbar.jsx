@@ -70,20 +70,16 @@ const Searchbar = function () {
         </Button>
       </Form>
       {suggestions.length > 0 && (
-        <ListGroup.Item key="suggestions-dropdown">
-          <Dropdown.Menu show>
-            {suggestions.map((suggestion) => (
-              <Dropdown.Item
-                key={suggestion.id}
-                onClick={() =>
-                  onSelectTown(suggestion.name, suggestion.country)
-                }
-              >
-                {suggestion.name}, {suggestion.country}
-              </Dropdown.Item>
-            ))}
-          </Dropdown.Menu>
-        </ListGroup.Item>
+        <Dropdown.Menu show>
+          {suggestions.map((suggestion, i) => (
+            <Dropdown.Item
+              key={i}
+              onClick={() => onSelectTown(suggestion.name, suggestion.country)}
+            >
+              {suggestion.name}, {suggestion.country}
+            </Dropdown.Item>
+          ))}
+        </Dropdown.Menu>
       )}
       {error && <p>{error}</p>}
       {weatherData.length > 0 && (
