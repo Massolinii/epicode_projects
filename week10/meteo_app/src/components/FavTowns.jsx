@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Container, Row, Col } from "react-bootstrap";
 
 const API_KEY = "6cbf0b3cb080c11f09fe6ba72bb563b5";
 
@@ -40,7 +40,7 @@ const FavTowns = () => {
       <div className="yourFav">
         <h2>Your Favourite Towns</h2>
         <h3>
-          from all around the world{" "}
+          from aaaaall around the world{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -54,41 +54,81 @@ const FavTowns = () => {
         </h3>
       </div>
 
-      <div className="d-flex flex-wrap justify-content-around">
-        {weatherData.map((data, i) => {
-          return (
-            <Card
-              key={data.name + i}
-              style={{ width: "18rem", marginBottom: "1rem" }}
-            >
-              <Card.Body>
-                <Card.Title>
-                  <Link to={`/${data.name}`}>{data.name}</Link>
-                  <span className="ms-3">
-                    {data.main && data.main.temp
-                      ? Math.round(tempConverter(data.main.temp)) + "°C"
-                      : "N/A"}
-                  </span>
-                </Card.Title>
-                <Button
-                  className="m-2"
-                  variant="danger"
-                  onClick={() => {
-                    dispatch({
-                      type: "REMOVE_FROM_FAV",
-                      payload: data.name,
-                    });
-                  }}
-                >
-                  remove from fav 💔
-                </Button>
-              </Card.Body>
-            </Card>
-          );
-        })}
-      </div>
+      {favContent.length === 0 ? (
+        <div className="empty-fav-message mx-5 my-3 p-1 ps-3">
+          <h2>This place is empty!</h2>
+          <p>Looks like you don't have any favourite places yet!</p>
+        </div>
+      ) : (
+        <div className="d-flex flex-wrap justify-content-around">
+          {weatherData.map((data, i) => {
+            return (
+              <Container className="my-1 ">
+                <Row>
+                  <Col>
+                    <Card
+                      key={data.name + i}
+                      className="mx-auto mt-3 mx-auto textLeft mainCards"
+                    >
+                      <Card.Body>
+                        <Link className="linkTitle" to={`/${data.name}`}>
+                          <Card.Title className="mainCardTitle">
+                            {data.name}
+                          </Card.Title>
+                        </Link>
+                        <Row>
+                          <Col className="d-flex col-3 align-items-center">
+                            <Card.Text>
+                              Temperature: <br />
+                              {data.main && data.main.temp
+                                ? Math.round(tempConverter(data.main.temp)) +
+                                  "°C"
+                                : "N/A"}
+                            </Card.Text>
+                          </Col>
+                          <Col className="d-flex col-3 align-items-center">
+                            <Card.Text className="mainCardHumidity">
+                              Humidity: <br />
+                              {data.main ? `${data.main.humidity}%` : "N/A"}
+                            </Card.Text>
+                          </Col>
+                          <Col className="d-flex col-3 align-items-center">
+                            <Card.Text className="mainCardWeather">
+                              Weather: <br />
+                              {data.weather && data.weather[0]
+                                ? data.weather[0].description
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                  data.weather[0].description
+                                    .slice(1)
+                                    .toLowerCase()
+                                : "N/A"}
+                            </Card.Text>
+                          </Col>
+                        </Row>
+                        <Button
+                          className="m-2 mainCardsButton"
+                          variant="danger"
+                          onClick={() => {
+                            dispatch({
+                              type: "REMOVE_FROM_FAV",
+                              payload: data.name,
+                            });
+                          }}
+                        >
+                          remove from fav 💔
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                </Row>
+              </Container>
+            );
+          })}
+        </div>
+      )}
       <Link to="/" id="home-link">
-        <Button className="m-4">Home</Button>
+        <Button className="m-4 mainCardsButton">Home</Button>
       </Link>
     </div>
   );

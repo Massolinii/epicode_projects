@@ -2,7 +2,6 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import MainHome from "./MainHome";
 import { Link } from "react-router-dom";
 import Searchbar from "./Searchbar";
-import TownCard from "./TownCard";
 
 const MyHome = () => {
   return (
@@ -36,15 +35,6 @@ const MyHome = () => {
           </Link>
         </Col>
       </Row>
-
-      <div>
-        <TownCard />
-        <TownCard />
-        <TownCard />
-        <TownCard />
-        <TownCard />
-        <TownCard />
-      </div>
     </Container>
   );
 };

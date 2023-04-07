@@ -16,9 +16,18 @@ const TownCard = ({ town, currentTemp }) => {
         <Col className="col-12">
           <Card className="mx-auto mt-3 mainCards">
             <Card.Body>
-              <Card.Title>{town.name}</Card.Title>
-              <Card.Text>Temperature: {Math.round(currentTemp)}°C</Card.Text>
-              <Card.Text>Conditions: {town.weather[0].main}</Card.Text>
+              <Card.Title className="text-end mainCardTitle">
+                {town.name}
+              </Card.Title>
+              <Card.Text className="text-start">
+                Temperature: {Math.round(currentTemp)}°C
+              </Card.Text>
+              <Card.Text className="text-start">
+                Humidity: {town.main.humidity}%
+              </Card.Text>
+              <Card.Text className="text-start">
+                Conditions: {town.weather[0].main}
+              </Card.Text>
 
               <Row>
                 <Col>
