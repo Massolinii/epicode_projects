@@ -1,15 +1,15 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import CustomNavbar from "./components/CustomNavbar.jsx";
+import "./App.css";
+
+import CustomNavbar from "./components/CustomNavbar";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <CustomNavbar />
-      </header>
+      <CustomNavbar />
+      <Home />
     </div>
   );
 }
-
 export default App;
