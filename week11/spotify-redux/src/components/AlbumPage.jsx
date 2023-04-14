@@ -2,9 +2,24 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setCurrentTrack,
+  toggleLikeTrack,
+  setSearchResults,
+} from "../redux/actions/actions";
+
 const AlbumPage = () => {
   const { id } = useParams();
   const [album, setAlbum] = useState(null);
+
+  const currentTrack = useSelector((state) => state.currentTrack);
+  const likedTracks = useSelector((state) => state.likedTracks);
+  const dispatch = useDispatch();
+
+  const handleTrackClick = (track) => {
+    dispatch(setCurrentTrack(track));
+  };
 
   useEffect(() => {
     async function fetchAlbum() {
@@ -25,6 +40,7 @@ const AlbumPage = () => {
         if (response.ok) {
           let album = await response.json();
           setAlbum(album);
+          dispatch(setSearchResults(album.tracks.data));
         } else {
           console.error("Something went wrong:", await response.text());
         }
@@ -34,7 +50,7 @@ const AlbumPage = () => {
     }
 
     fetchAlbum();
-  }, [id]);
+  }, [id, dispatch]);
 
   if (!album) {
     return <div>Loading...</div>;
@@ -83,6 +99,7 @@ const AlbumPage = () => {
                         href="#"
                         className="card-title trackHover px-3"
                         style={{ color: "white" }}
+                        onClick={() => handleTrackClick(track)}
                       >
                         {track.title}
                       </a>
@@ -92,6 +109,12 @@ const AlbumPage = () => {
                           ? "0" + (parseInt(track.duration) % 60)
                           : parseInt(track.duration) % 60}
                       </small>
+                      <button
+                        onClick={() => dispatch(toggleLikeTrack(track.id))}
+                        style={{ color: "white" }}
+                      >
+                        {likedTracks[track.id] ? "Unlike" : "Like"}
+                      </button>
                     </div>
                   ))}
                 </div>

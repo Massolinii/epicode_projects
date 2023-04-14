@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { fetchArtists, search } from "../api";
 import AlbumCard from "./AlbumCard";
 import LeftSidebar from "./LeftSidebar";
+import { setCurrentTrack } from "../redux/actions/actions";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
   const [songs, setSongs] = useState({
@@ -9,6 +11,11 @@ const Home = () => {
     popSongs: [],
     hipHopSongs: [],
   });
+
+  const dispatch = useDispatch();
+  const handleTrackClick = (track) => {
+    dispatch(setCurrentTrack(track));
+  };
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);

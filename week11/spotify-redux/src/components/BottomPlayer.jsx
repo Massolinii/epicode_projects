@@ -1,4 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from "react";
+import { useSelector } from "react-redux";
 import { Container, Row, Col, ProgressBar, Image } from "react-bootstrap";
 
 import shuffle from "../imgs/playerbuttons/Shuffle.png";
@@ -8,6 +9,7 @@ import next from "../imgs/playerbuttons/Next.png";
 import repeat from "../imgs/playerbuttons/Repeat.png";
 
 function BottomPlayer() {
+  const currentTrack = useSelector((state) => state.currentTrack);
   return (
     <Container fluid className="bg-container myPlayer">
       <Row className="justify-content-center">
