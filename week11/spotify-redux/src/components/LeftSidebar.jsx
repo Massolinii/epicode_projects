@@ -4,19 +4,8 @@ import { FaHome, FaBookOpen } from "react-icons/fa";
 import logo from "../imgs/logo/Spotify_Logo.png";
 import { Link } from "react-router-dom";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
-import { search } from "../api";
 
-const LeftSidebar = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearch = async () => {
-    // Call the search function
-    const results = await search(searchQuery);
-
-    // Handle the results
-  };
-
-  // Your LeftSidebar component logic
+const LeftSidebar = (props) => {
   return (
     <Navbar bg="navbar" variant="light" fixed="left" expand="sm">
       <div className="nav-container">
@@ -47,13 +36,12 @@ const LeftSidebar = () => {
                   placeholder="Search"
                   aria-label="Search"
                   aria-describedby="basic-addon2"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => props.setSearchQuery(e.target.value)}
                 />
                 <Button
                   variant="outline-secondary"
                   className="btn-sm"
-                  onClick={handleSearch}
+                  onClick={props.handleSearch}
                 >
                   GO
                 </Button>

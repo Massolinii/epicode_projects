@@ -58,22 +58,37 @@ export const fetchArtists = async (randomArtistCount) => {
   const rockArtists = [
     "Queen",
     "The Rolling Stones",
+    "Bob Dylan",
+    "The Who",
     "AC/DC",
-    // ...other rock artists...
+    "U2",
+    "The Police",
+    "Eagles",
+    "The Doors",
+    "Bon Jovi",
   ];
 
   const popArtists = [
     "Ariana Grande",
     "Dua Lipa",
     "Justin Bieber",
-    // ...other pop artists...
+    "Doja Cat",
+    "Katy Perry",
+    "Madonna",
+    "Lady Gaga",
+    "Michael Jackson",
+    "Miley Cyrus",
   ];
 
   const hipHopArtists = [
     "Eminem",
     "Kendrick Lamar",
     "Kanye West",
-    // ...other hip-hop artists...
+    "Jay-Z",
+    "Drake",
+    "Tupac",
+    "50 Cent",
+    "Nicki Minaj",
   ];
 
   const fetchRandomArtistSongs = async (artists) => {
