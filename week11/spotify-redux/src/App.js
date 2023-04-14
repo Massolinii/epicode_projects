@@ -8,6 +8,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import LeftSidebar from "./components/LeftSidebar";
 import TopNavbar from "./components/TopNavbar";
 import BottomPlayer from "./components/BottomPlayer";
+import FavoritesPage from "./components/FavoritesPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <TopNavbar />
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/favorites" element={<FavoritesPage />} />
             <Route path="/artist/:id" element={<ArtistPage />}></Route>
             <Route path="/album/:id" element={<AlbumPage />}></Route>
           </Routes>

@@ -35,7 +35,7 @@ const LeftSidebar = (props) => {
             <Nav.Link href="/">
               <FaHome size={20} className="me-2" /> Home
             </Nav.Link>
-            <Nav.Link href="#">
+            <Nav.Link as={Link} to="/favorites">
               <FaBookOpen size={20} className="me-2" /> Your Library
             </Nav.Link>
             <Nav.Link>
