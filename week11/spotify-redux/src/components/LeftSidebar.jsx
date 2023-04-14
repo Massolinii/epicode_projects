@@ -23,7 +23,7 @@ const LeftSidebar = (props) => {
         <Navbar.Toggle aria-controls="navbarNavAltMarkup" />
         <Navbar.Collapse id="navbarNavAltMarkup">
           <Nav className="flex-column">
-            <Nav.Link href="index.html">
+            <Nav.Link href="/">
               <FaHome size={20} className="me-2" /> Home
             </Nav.Link>
             <Nav.Link href="#">

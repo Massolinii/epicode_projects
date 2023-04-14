@@ -2,8 +2,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-import Artist from "./components/Artist";
-import Album from "./components/Album";
+import ArtistPage from "./components/ArtistPage";
+import AlbumPage from "./components/AlbumPage";
 import { Container } from "react-bootstrap";
 import LeftSidebar from "./components/LeftSidebar";
 import TopNavbar from "./components/TopNavbar";
@@ -20,8 +20,8 @@ function App() {
           <TopNavbar />
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/artist/:id" element={<Artist />}></Route>
-            <Route path="/album/:id" element={<Album />}></Route>
+            <Route path="/artist/:id" element={<ArtistPage />}></Route>
+            <Route path="/album/:id" element={<AlbumPage />}></Route>
           </Routes>
           <BottomPlayer />
         </Container>
