@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { fetchArtists, search } from "../api";
+import { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
+
+import { fetchArtists, search } from "./api";
+
 import AlbumCard from "./AlbumCard";
 import LeftSidebar from "./LeftSidebar";
-import { setCurrentTrack } from "../redux/actions/actions";
-import { useDispatch } from "react-redux";
-
-import { Spinner } from "react-bootstrap";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -15,16 +14,11 @@ const Home = () => {
     hipHopSongs: [],
   });
 
-  const dispatch = useDispatch();
-  const handleTrackClick = (track) => {
-    dispatch(setCurrentTrack(track));
-  };
-
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = async () => {
-    if (searchQuery.length > 2) {
+    if (searchQuery.lenght > 2) {
       const results = await search(searchQuery);
       setSearchResults(results);
     } else {
@@ -39,19 +33,22 @@ const Home = () => {
         setSongs(result);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.log("Error fetching data:", error);
       }
     };
     fetchData();
   }, []);
 
+  useEffect(() => {
+    handleSearch();
+  }, [searchQuery]);
+
   return (
     <div>
       {loading ? (
-        <div className="d-flex justify-content-center">
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
+        <div className="mt-5 text-center">
+          <p className="text-warning">Loading...</p>
+          <Spinner animation="border" role="status" variant="warning"></Spinner>
         </div>
       ) : (
         <>
@@ -78,21 +75,21 @@ const Home = () => {
             </>
           )}
 
-          <h2>Rock Songs</h2>
+          <h2 id="rock">Rock Songs</h2>
           <div className="row">
             {songs.rockSongs.map((song, index) => (
               <AlbumCard key={index} songInfo={song} />
             ))}
           </div>
 
-          <h2>Pop Songs</h2>
+          <h2 id="pop">Pop Songs</h2>
           <div className="row">
             {songs.popSongs.map((song, index) => (
               <AlbumCard key={index} songInfo={song} />
             ))}
           </div>
 
-          <h2>Hip-Hop Songs</h2>
+          <h2 id="hiphop">Hip-Hop Songs</h2>
           <div className="row">
             {songs.hipHopSongs.map((song, index) => (
               <AlbumCard key={index} songInfo={song} />

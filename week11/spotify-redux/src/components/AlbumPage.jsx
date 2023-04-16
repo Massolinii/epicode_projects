@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -13,7 +13,6 @@ const AlbumPage = () => {
   const { id } = useParams();
   const [album, setAlbum] = useState(null);
 
-  const currentTrack = useSelector((state) => state.currentTrack);
   const likedTracks = useSelector((state) => state.likedTracks);
   const dispatch = useDispatch();
 
@@ -53,72 +52,60 @@ const AlbumPage = () => {
   }, [id, dispatch]);
 
   if (!album) {
-    return <div>Loading...</div>;
+    return <div>Loading....</div>;
   }
 
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-12 col-md-9 offset-md-3 mainPage">
-          <div className="row mb-3">
-            <div className="col-9 col-lg-11 mainLinks d-none d-md-flex">
-              <a href="#">TRENDING</a>
-              <a href="#">PODCAST</a>
-              <a href="#">MOODS AND GENRES</a>
-              <a href="#">NEW RELEASES</a>
-              <a href="#">DISCOVER</a>
-            </div>
+    <div className="container flex">
+      <div className="row AlbumPageMainRow">
+        <div className="col-12 col-md-3 pt-5 text-center" id="img-container">
+          <img
+            src={album?.cover || "Loading..."}
+            className="card-img img-fluid"
+            alt="Album"
+          />
+          <div className="mt-2 text-center">
+            <p className="album-title">{album?.title || "Loading..."}</p>
           </div>
+
+          <Link className="noDecoration" to={`/artist/${album?.artist?.id}`}>
+            <p className="artist-name">{album?.artist?.name || "Loading..."}</p>
+          </Link>
+
+          <div className="mt-4 text-center">
+            <button id="btnPlay" className="btn btn-success" type="button">
+              P L A Y
+            </button>
+          </div>
+        </div>
+        <div className="col">
           <div className="row">
-            <div className="col-md-3 pt-5 text-center" id="img-container">
-              <img
-                src={album.cover}
-                className="card-img img-fluid"
-                alt="Album"
-              />
-              <div className="mt-4 text-center">
-                <p className="album-title">{album.title}</p>
-              </div>
-              <div className="text-center">
-                <p className="artist-name">
-                  {album.artist?.name || "Loading..."}
-                </p>
-              </div>
-              <div className="mt-4 text-center">
-                <button id="btnPlay" className="btn btn-success" type="button">
-                  Play
-                </button>
-              </div>
-            </div>
-            <div className="col-md-8 p-5">
-              <div className="row">
-                <div className="col-md-10 mb-5" id="trackList">
-                  {album.tracks?.data.map((track) => (
-                    <div key={track.id} className="py-3 trackHover">
-                      <a
-                        href="#"
-                        className="card-title trackHover px-3"
-                        style={{ color: "white" }}
-                        onClick={() => handleTrackClick(track)}
-                      >
-                        {track.title}
-                      </a>
-                      <small className="duration" style={{ color: "white" }}>
-                        {Math.floor(parseInt(track.duration) / 60)}:
-                        {parseInt(track.duration) % 60 < 10
-                          ? "0" + (parseInt(track.duration) % 60)
-                          : parseInt(track.duration) % 60}
-                      </small>
-                      <button
-                        onClick={() => dispatch(toggleLikeTrack(track.id))}
-                        style={{ color: "white" }}
-                      >
-                        {likedTracks[track.id] ? "Unlike" : "Like"}
-                      </button>
-                    </div>
-                  ))}
+            <div className="col-md-10 mb-5" id="trackList">
+              {album.tracks?.data.map((track) => (
+                <div key={track.id} className="py-3 trackHover">
+                  <span
+                    href="/"
+                    className="card-title trackHover px-3"
+                    style={{ color: "white" }}
+                    onClick={() => handleTrackClick(track)}
+                  >
+                    {track.title}
+                  </span>
+                  <small className="duration" style={{ color: "white" }}>
+                    {Math.floor(parseInt(track.duration) / 60)}:
+                    {parseInt(track.duration) % 60 < 10
+                      ? "0" + (parseInt(track.duration) % 60)
+                      : parseInt(track.duration) % 60}
+                  </small>
+                  <button
+                    className="btn btn-danger p-0 btnLike"
+                    onClick={() => dispatch(toggleLikeTrack(track.id))}
+                    style={{ color: "white" }}
+                  >
+                    {likedTracks[track.id] ? "Unlike💔" : "Like❤️"}
+                  </button>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

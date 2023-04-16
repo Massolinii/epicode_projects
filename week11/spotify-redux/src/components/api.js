@@ -93,11 +93,15 @@ export const fetchArtists = async (randomArtistCount) => {
 
   const fetchRandomArtistSongs = async (artists) => {
     const songs = [];
+    const songInfo = [];
+
     for (let i = 0; i < randomArtistCount; i++) {
-      const randomIndex = Math.floor(Math.random() * artists.length);
-      const randomArtist = artists[randomIndex];
-      const songInfo = await handleArtist(randomArtist);
-      songs.push(songInfo);
+      if (!songs.includes(songInfo)) {
+        const randomIndex = Math.round(Math.random() * artists.length);
+        const randomArtist = artists[randomIndex];
+        const songInfo = await handleArtist(randomArtist);
+        songs.push(songInfo);
+      }
     }
     return songs;
   };

@@ -14,17 +14,16 @@ body,
     rgb(34, 46, 63) 50%,
     rgb(13, 18, 26) 100%
   );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
 }
 
 /*SIDEBAR SECTION*/
 .sideCont {
-  min-width: 250px;
+  min-width: 200px;
   flex-shrink: 0;
   z-index: 1;
-}
-
-.myElements {
-  width: calc(100% - 250px);
 }
 
 .navbar.fixed-left {
@@ -33,13 +32,14 @@ body,
   left: 0;
   right: 0;
   bottom: 0;
-  width: 230px;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  background-color: black;
-  z-index: 100;
   height: 100%;
+  width: 225px;
+  background-color: black;
+  z-index: 5;
+  text-align: start;
+  padding-left: 10px;
   display: flex;
+  flex-flow: column nowrap;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -62,6 +62,31 @@ body,
   padding-left: 10px;
 }
 
+.center {
+  justify-content: center;
+  padding-left: 30px;
+}
+
+@media screen and (max-width: 576px) {
+  .navbar.fixed-left {
+    width: 170px;
+  }
+
+  .sideCont {
+    min-width: 170px;
+  }
+
+  .center {
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .nav-item {
+    font-size: x-small;
+  }
+}
+
 ul {
   list-style-type: none;
   padding-left: 3px;
@@ -70,10 +95,6 @@ ul {
 .nav-btn {
   margin-bottom: 20px;
   text-align: center;
-}
-
-.nav-btn a {
-  color: rgb(145, 145, 145);
 }
 
 .signup-btn {
@@ -87,8 +108,8 @@ ul {
 
 .signup-btn:hover {
   color: white;
-  background-color: rgb(60, 211, 60);
-  border: 1px solid rgb(60, 211, 60);
+  background-color: rgb(66, 214, 66);
+  border: 2px solid rgb(45, 153, 45);
 }
 
 .login-btn {
@@ -101,41 +122,30 @@ ul {
 }
 
 .login-btn:hover {
-  color: black;
-  background-color: white;
+  border: 2px solid white;
+  background-color: rgb(46, 46, 46);
 }
 
-.navbar.fixed-left {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+@media screen and (max-width: 576px) {
+  .signup-btn,
+  .login-btn {
+    width: 140px;
+  }
 }
 
-.navbar-container {
-  height: 40%;
+.light-grey {
+  color: #888888;
 }
 
 /* BOTTOM PLAYER SECTION*/
 
 .bg-container {
-  height: 5.5rem;
   background-color: #282828;
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   padding-left: 230px !important;
-}
-
-@media screen and (max-width: 936px) {
-  .sideCont {
-    display: none;
-  }
-
-  .bg-container {
-    padding-left: 0 !important;
-  }
 }
 
 .playerControls a img {
@@ -145,8 +155,8 @@ ul {
 }
 
 .playerControls a:hover {
-  filter: brightness(80%);
-  color: #282828 !important;
+  filter: brightness(75%);
+  color: #363535 !important;
 }
 
 .playBar p {
@@ -161,6 +171,11 @@ ul {
 }
 
 /*MAIN PAGE SECTION*/
+
+.myElements {
+  text-align: center;
+  margin-bottom: 350px;
+}
 
 .mainLinks {
   margin-top: 1.5rem;
@@ -206,24 +221,39 @@ ul {
 #searchResults,
 #artist-tracks {
   color: white;
-  font-weight: 700;
-  padding-top: 50px;
+  font-weight: 600;
+  padding-top: 20px;
 }
 
 .trackHover:hover {
-  background-color: black;
+  opacity: 90%;
+  font-size: large;
   cursor: pointer;
 }
 
-.trackHover a {
+.trackHover a,
+.noDecoration {
   text-decoration: none;
+  color: white;
+}
+
+/* ALBUM PAGE */
+
+@media screen and (max-width: 767px) {
+  .AlbumPageMainRow {
+    flex-direction: column;
+  }
 }
 
 #btnPlay {
   font-weight: 700;
-  width: 150px;
-  height: 50px;
-  border-radius: 50px;
+  width: 130px;
+  height: 46px;
+  border-radius: 23px;
+}
+
+.btnLike {
+  border-radius: 0;
 }
 
 .duration {
@@ -246,14 +276,14 @@ ul {
   text-transform: uppercase;
 }
 
-#hipHopSection {
-  margin-bottom: 7rem;
-}
-
 #followers {
   color: white;
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.artistProfileImage {
+  width: 100%;
 }
 
 .album-title {
