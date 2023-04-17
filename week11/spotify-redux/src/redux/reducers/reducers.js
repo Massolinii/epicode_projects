@@ -4,7 +4,7 @@ const initialState = {
   searchResults: [],
 };
 
-const rootReducer = (state = initialState, action) => {
+const mainReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SET_CURRENT_TRACK":
       return { ...state, currentTrack: action.payload };
@@ -23,4 +23,4 @@ const rootReducer = (state = initialState, action) => {
   }
 };
 
-export default rootReducer;
+export default mainReducer;
