@@ -1,8 +1,12 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-
 import { Link } from "react-router-dom";
 
-function CustomNavbar() {
+const navLinks = [
+  { path: "/", label: "Home" },
+  { path: "/your-cities", label: "Favourites" },
+];
+
+function BottomNavbar() {
   return (
     <Navbar bg="light" expand="sm" fixed="bottom" className="navBar">
       <Container fluid>
@@ -12,13 +16,11 @@ function CustomNavbar() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto my-2 my-lg-0">
-            <Link to="/" className="nav-link">
-              Home
-            </Link>
-
-            <Link to="/your-cities" className="nav-link">
-              Favourites
-            </Link>
+            {navLinks.map((link, index) => (
+              <Link key={index} to={link.path} className="nav-link">
+                {link.label}
+              </Link>
+            ))}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -26,4 +28,4 @@ function CustomNavbar() {
   );
 }
 
-export default CustomNavbar;
+export default BottomNavbar;

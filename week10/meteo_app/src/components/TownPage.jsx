@@ -2,39 +2,11 @@ import { Container, Card, Row, Col } from "react-bootstrap";
 import TownCard from "./TownCard";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { fetchWeatherData } from "../api/api";
+import { averageTemperatures, tempConverter } from "../utils/utils";
 
-function tempConverter(kelvin) {
-  const celsius = kelvin - 273.15;
-  return Math.floor(celsius * 100) / 100;
-}
-
-function averageTemperatures(forecast) {
-  const dailyTemps = {};
-  forecast.forEach((item) => {
-    const date = new Date(item.dt * 1000);
-    const dateString = date.toISOString().split("T")[0];
-    if (!dailyTemps[dateString]) {
-      dailyTemps[dateString] = {
-        temps: [],
-      };
-    }
-    dailyTemps[dateString].temps.push(item.main.temp);
-  });
-
-  const dailyAverages = [];
-  for (const date in dailyTemps) {
-    const temps = dailyTemps[date].temps;
-    const avgTemp = temps.reduce((a, b) => a + b) / temps.length;
-    dailyAverages.push({ date, avgTemp });
-  }
-
-  return dailyAverages;
-}
-
-function TownPage() {
-  const API_KEY = "6cbf0b3cb080c11f09fe6ba72bb563b5";
+const TownPage = () => {
   const params = useParams();
-  console.log(params);
   const [town, setTown] = useState(null);
   const [forecast, setForecast] = useState([]);
   const [nextDaysForecast, setNextDaysForecast] = useState([]);
@@ -42,16 +14,8 @@ function TownPage() {
 
   const getTownDetails = async () => {
     try {
-      let response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${params.name}&appid=${API_KEY}`
-      );
-      if (response.ok) {
-        let details = await response.json();
-        setTown(details);
-        console.log(details);
-      } else {
-        console.log("error happened with the request");
-      }
+      const details = await fetchWeatherData(params.name);
+      setTown(details);
     } catch (error) {
       console.log("generic error happened", error);
     }
@@ -161,6 +125,6 @@ function TownPage() {
       )}
     </Container>
   );
-}
+};
 
 export default TownPage;
