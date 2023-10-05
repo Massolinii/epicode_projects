@@ -11,14 +11,14 @@ import FavTowns from "./components/FavTowns";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <main className="App">
         <CustomNavbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/town/:name" element={<TownPage />} />
           <Route path="/your-cities" element={<FavTowns />} />
         </Routes>
-      </div>
+      </main>
     </BrowserRouter>
   );
 }
