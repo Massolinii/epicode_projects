@@ -2,7 +2,7 @@ import { Container, Card, Row, Col } from "react-bootstrap";
 import TownCard from "./TownCard";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchWeatherData } from "../api/api";
+import { fetchWeatherData, fetchTownForecast } from "../api/api";
 import { averageTemperatures, tempConverter } from "../utils/utils";
 
 const TownPage = () => {
@@ -23,28 +23,21 @@ const TownPage = () => {
 
   const getTownForecast = async () => {
     try {
-      let response = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${params.name}&appid=${API_KEY}`
-      );
-      if (response.ok) {
-        let details = await response.json();
-        const now = new Date();
-        const firstDayForecast = details.list.filter((item) => {
-          const itemDate = new Date(item.dt * 1000);
-          const hoursDiff = (itemDate - now) / 1000 / 60 / 60;
-          return hoursDiff >= 0 && hoursDiff <= 24;
-        });
-        setForecast(firstDayForecast);
+      const details = await fetchTownForecast(params.name);
+      const now = new Date();
+      const firstDayForecast = details.list.filter((item) => {
+        const itemDate = new Date(item.dt * 1000);
+        const hoursDiff = (itemDate - now) / 1000 / 60 / 60;
+        return hoursDiff >= 0 && hoursDiff <= 24;
+      });
+      setForecast(firstDayForecast);
 
-        const nextDaysForecast = details.list.filter((item) => {
-          const itemDate = new Date(item.dt * 1000);
-          const hoursDiff = (itemDate - now) / 1000 / 60 / 60;
-          return hoursDiff > 24 && hoursDiff <= 24 * 5;
-        });
-        setNextDaysForecast(nextDaysForecast);
-      } else {
-        console.log("error happened with the request");
-      }
+      const nextDaysForecast = details.list.filter((item) => {
+        const itemDate = new Date(item.dt * 1000);
+        const hoursDiff = (itemDate - now) / 1000 / 60 / 60;
+        return hoursDiff > 24 && hoursDiff <= 24 * 5;
+      });
+      setNextDaysForecast(nextDaysForecast);
     } catch (error) {
       console.log("generic error happened", error);
     }

@@ -33,7 +33,7 @@ export const fetchTownForecast = async (townName) => {
     );
     if (response.ok) {
       const data = await response.json();
-      return data.list;
+      return data;
     } else {
       throw new Error("Failed to fetch forecast data");
     }
